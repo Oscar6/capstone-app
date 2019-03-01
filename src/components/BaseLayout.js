@@ -10,7 +10,7 @@ class BaseLayout extends React.Component {
     render() {
         return (
             <div>
-                BaseLayout.js {this.props.child}
+                BaseLayout.js {this.props.children}
             </div>
         );
     }
