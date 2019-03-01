@@ -6,6 +6,7 @@ class App extends Component {
       <div>
         App.js - landing page
         capstone project
+        {/* master test push from oscar */}
       </div>
     );
   }
