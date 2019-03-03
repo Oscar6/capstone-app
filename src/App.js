@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Map from './components/Map';
 
 class App extends Component {
   render() {
@@ -7,6 +8,9 @@ class App extends Component {
         App.js - landing page
         capstone project
         {/* master test push from oscar */}
+        {/* <div className="map"> */}
+          <Map />
+        {/* </div> */}
       </div>
     );
   }
