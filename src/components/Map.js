@@ -11,7 +11,9 @@ const initialViewState = {
   latitude: 29.7604,
   zoom: 13,
   pitch: 0,
-  bearing: 0
+  bearing: 0,
+  width: 100,
+  height: 100,
 };
 
 // Data to be used by the LineLayer
