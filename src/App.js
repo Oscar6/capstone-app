@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Map from '../src/components/Map';
+import SearchPage from './components/Search';
 
 const AppWrapper = styled.div `
   display: flex;
@@ -26,6 +27,7 @@ class App extends Component {
       <AppWrapper>
         <Container>
           <Map />
+          <SearchPage />
         </Container>
       </AppWrapper>
     );
