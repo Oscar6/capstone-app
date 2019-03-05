@@ -1,40 +1,29 @@
-import React from 'react';
-import DeckGL, {LineLayer} from 'deck.gl';
-import {StaticMap} from 'react-map-gl';
+import React from "react";
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import styled from 'styled-components';
 
-// Set your mapbox access token here
-const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoib3NjYXI2IiwiYSI6ImNqc3FqODd1NzBia20zeXFpbnc3Y20wZTAifQ.NM35sfEySwv4r1iTAM4EsA';
+const Wrapper = styled.div `
+    width: ${props => props.width};
+    height: ${props => props.height};
+`;
 
-// Initial viewport settings
-const initialViewState = {
-  longitude: -95.3698,
-  latitude: 29.7604,
-  zoom: 13,
-  pitch: 0,
-  bearing: 0,
-  width: 100,
-  height: 100,
-};
+export default class Map extends React.Component {
+    
+    componentDidMount(){
+        this.map = L.map('map', {
+            center: [29.7604, -95.3698],
+            zoom: 12,
+            zoomControl: false
+        });
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+            detectRetina: true,
+            maxZoom: 20,
+            maxNative: 17,
+        }).addTo(this.map);
+    }
 
-// Data to be used by the LineLayer
-const data = [{sourcePosition: [-95.3698, 29.7604], targetPosition: [-95.3698, 29.7604]}];
-
-class Map extends React.Component {
-  render() {
-    const layers = [
-      new LineLayer({id: 'line-layer', data})
-    ];
-
-    return (
-      <DeckGL
-        initialViewState={initialViewState}
-        controller={true}
-        layers={layers}
-      >
-        <StaticMap mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN} />
-      </DeckGL>
-    );
-  }
+    render(){
+        return <Wrapper width="1280px" height="720px" id="map" />
+    }
 }
-
-export default Map;
