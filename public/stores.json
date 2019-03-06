@@ -1,0 +1,114 @@
+{
+    "stores": [
+      {
+        "storeId": 0,
+        "name": "Best Buy",
+        "address": "5133 Richmond Ave",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77056",
+        "lat": "29.7316085",
+        "lon": "-95.4649623",
+        "store_hours": "Mon-Sat: 10AM-9PM & Sun 11AM-8PM"
+      },
+      {
+        "storeId": 1,
+        "name": "Best Buy",
+        "address": "100 Meyerland Plaza Mall",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77096",
+        "lat": "29.754009",
+        "lon": "-95.527836",
+        "store_hours": "Mon-Sat: 10AM-9PM & Sun 11AM-8PM"
+      },
+      {
+        "storeId": 2,
+        "name": "Best Buy",
+        "address": "510 Gulfgate Center Mall",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77087",
+        "lat": "29.999184",
+        "lon": "-95.39424",
+        "store_hours": "Mon-Sat: 10AM-9PM & Sun 11AM-8PM"
+      },
+      {
+        "storeId": 3,
+        "name": "Target",
+        "address": "2580 Shearn St",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77007",
+        "lat": "29.7741916",
+        "lon": "-95.3854289",
+        "store_hours": "8AM-12AM"
+      },
+      {
+        "storeId": 4,
+        "name": "Target",
+        "address": "8500 S Main St",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77025",
+        "lat": "29.6929428",
+        "lon": "-95.4185697",
+        "store_hours": "8AM-12AM"
+      },
+      {
+        "storeId": 5,
+        "name": "Target",
+        "address": "300 Meyerland Plaza Mall",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77096",
+        "lat": "29.759336",
+        "lon": "-95.527838",
+        "store_hours": "8AM-12AM"
+      },
+      {
+        "storeId": 6,
+        "name": "Walmart",
+        "address": "111 Yale St",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77007",
+        "lat": "29.7728201",
+        "lon": "-95.401322",
+        "store_hours": "24 hours"
+      },
+      {
+        "storeId": 7,
+        "name": "Walmart",
+        "address": "5405 S Rice Ave",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77081",
+        "lat": "29.723052",
+        "lon": "-95.465008",
+        "store_hours": "24 hours"
+      },
+      {
+        "storeId": 8,
+        "name": "Walmart",
+        "address": "1118 Silber Rd",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77055",
+        "lat": "29.788756",
+        "lon": "-95.465145",
+        "store_hours": "24 hours"
+      },
+      {
+        "storeId": 9,
+        "name": "Fry's Electronics",
+        "address": "11565 US-59",
+        "city": "Houston",
+        "state": "TX",
+        "zip_code": "77031",
+        "lat": "29.743536",
+        "lon": "-95.381684",
+        "store_hours": "Sun-Fri: 10AM-9PM & Sat 9AM-9PM"
+      }
+    ]
+  }

@@ -1,87 +1,50 @@
-// import React from 'react';
-// import AlgoliaPlaces from 'algolia-places-react';
-
-// class Search extends React.Component {
-//   constructor(props) {
-//     super(props);
-    
-//   }
-
-//   render() {
-//     return (
-//       <AlgoliaPlaces
-//       placeholder='Write an address here'
-
-//       options={{
-//         appId: 'P3I1RCM5CN',
-//         apiKey: 'a80be3f8bce5508e0cd9280c6d63cd79',
-//         language: 'sv',
-//         countries: ['se'],
-//         type: 'city',
-//         // Other options from https://community.algolia.com/places/documentation.html#options
-//       }}
-
-//       onChange={({ query, rawAnswer, suggestion, suggestionIndex }) => 
-//         console.log('Fired when suggestion selected in the dropdown or hint was validated.')}
-
-//       onSuggestions={({ rawAnswer, query, suggestions }) => 
-//         console.log('Fired when dropdown receives suggestions. You will receive the array of suggestions that are displayed.')}
-
-//       onCursorChanged={({ rawAnswer, query, suggestion, suggestonIndex }) => 
-//         console.log('Fired when arrows keys are used to navigate suggestions.')}
-
-//       onClear={() => 
-//         console.log('Fired when the input is cleared.')}
-
-//       onLimit={({ message }) => 
-//         console.log('Fired when you reached your current rate limit.')}
-
-//       onError={({ message }) => 
-//         console.log('Fired when we could not make the request to Algolia Places servers for any reason but reaching your rate limit.')}
-//     />
-//     );
-//   }
-// }
-
-// export default Search;
-
 import React, { Component } from 'react';
-import AlgoliaPlaces from 'algolia-places-react';
+import axios from 'axios';
+// import ReactSearchBox from 'react-search-box'
+import Suggestions from './Suggestions';
 
-export default class Search extends Component {
+class Search extends Component {
+  state = {
+    query: '',
+    results: []
+  }
+
+  getInfo = () => {
+    axios.get(`stores.json`)
+      .then(({ data }) => {
+        this.setState({
+          results: data.stores
+        })
+      })
+  }
+
+  handleInputChange = () => {
+    this.setState({
+      query: this.search.value
+    }, () => {
+      if (this.state.query && this.state.query.length > 1) {
+        if (this.state.query.length % 2 === 0) {
+          this.getInfo()
+        }
+      } else if (!this.state.query) {
+      }
+    })
+  }
 
   render() {
-  return (
-    <AlgoliaPlaces
-      placeholder='Write an address here'
+    return (
+      <form>
+        <input
+          placeholder="Search Retail Store..."
+          ref={input => this.search = input}
+          onChange={this.handleInputChange}
+        />
+        <Suggestions results={this.state.results} />
+      </form>
 
-      options={{
-        appId: 'P3I1RCM5CN',
-        apiKey: 'a80be3f8bce5508e0cd9280c6d63cd79',
-        language: 'sv',
-        countries: ['se'],
-        type: 'city',
-        // Other options from https://community.algolia.com/places/documentation.html#options
-      }}
 
-      onChange={({ query, rawAnswer, suggestion, suggestionIndex }) => 
-        console.log('Fired when suggestion selected in the dropdown or hint was validated.')}
-
-      onSuggestions={({ rawAnswer, query, suggestions }) => 
-        console.log('Fired when dropdown receives suggestions. You will receive the array of suggestions that are displayed.')}
-
-      onCursorChanged={({ rawAnswer, query, suggestion, suggestonIndex }) => 
-        console.log('Fired when arrows keys are used to navigate suggestions.')}
-
-      onClear={() => 
-        console.log('Fired when the input is cleared.')}
-
-      onLimit={({ message }) => 
-        console.log('Fired when you reached your current rate limit.')}
-
-      onError={({ message }) => 
-        console.log('Fired when we could not make the request to Algolia Places servers for any reason but reaching your rate limit.')}
-    />
-  );  
+    )
+  }
 }
-}
+
+export default Search;
