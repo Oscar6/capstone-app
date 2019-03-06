@@ -1,4 +1,6 @@
 import React from 'react';
+import { Container } from 'react-bootstrap'
+import NavBar from './NavBar'
 // import PropTypes from 'prop-types';
 
 class BaseLayout extends React.Component {
@@ -10,7 +12,12 @@ class BaseLayout extends React.Component {
     render() {
         return (
             <div>
-                BaseLayout.js {this.props.children}
+                <NavBar></NavBar>
+                <Container>
+
+                    BaseLayout.js {this.props.children}
+
+                </Container>
             </div>
         );
     }
