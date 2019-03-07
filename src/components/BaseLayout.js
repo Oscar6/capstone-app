@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 // import PropTypes from 'prop-types';
 
 class BaseLayout extends React.Component {
@@ -10,7 +11,8 @@ class BaseLayout extends React.Component {
     render() {
         return (
             <div>
-                BaseLayout.js {this.props.children}
+                <Header />
+                {this.props.children}
             </div>
         );
     }
