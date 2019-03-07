@@ -32,4 +32,3 @@ export default class Map extends React.Component {
     }
   };
 
-export default Map

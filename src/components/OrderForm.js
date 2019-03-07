@@ -10,7 +10,7 @@ class OrderForm extends React.Component {
 
     render() {
         return (
-            <Container>
+            <Container className="orderForm">
                 <Form>
                     <Form.Row>
                         <Form.Group as={Col} className="formGridStore">

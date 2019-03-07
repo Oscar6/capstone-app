@@ -12,7 +12,7 @@ import ClientPage from './components/ClientPage';
 import Register from './Register/Register'
 import Dashboard from './Dashboard/Dashboard'
 import OrderForm from './components/OrderForm';
-import './App.css';
+import './Styles/App.css';
 
 
 // const store = createStore(reducer);
