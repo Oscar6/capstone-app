@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react';
+// import styled from 'styled-components';
+import { Col, Form } from 'react-bootstrap';
 import Map from '../src/components/Map';
-import Search from '../src/components/Search';
-// import StoresApi from './components/StoresApi';
+import OrderForm from '../src/components/OrderForm';
 
-const AppWrapper = styled.div `
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-`;
+// const AppWrapper = styled.div `
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 100px;
+// `;
 
-const Container = styled.div `
-`
+// const Container = styled.div `
+// `
 
 class App extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -25,13 +25,13 @@ class App extends Component {
   }
   render() {
     return (
-      <AppWrapper>
-        <Container>
-          {/* <StoresApi /> */}
-          <Search />
-          <Map />
-        </Container>
-      </AppWrapper>
+      <div className="app">
+        <Form.Row>
+          <OrderForm as={Col} />
+          <Map as={Col} />
+        </Form.Row>
+      </div>
+
     );
   }
 }

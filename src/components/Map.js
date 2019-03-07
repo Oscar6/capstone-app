@@ -7,6 +7,9 @@ import styled from 'styled-components';
 const Wrapper = styled.div `
     width: ${props => props.width};
     height: ${props => props.height};
+    border-style: ${props => props.borderStyle};
+    border-width: ${props => props.borderWidth};
+    border-radius: ${props => props.borderRadius};
 `;
 
 export default class Map extends React.Component {
@@ -25,6 +28,6 @@ export default class Map extends React.Component {
     }
 
     render() {
-        return <Wrapper width="1280px" height="720px" id="map" />
+        return <Wrapper width="550px" height="550px" borderWidth="2px" borderStyle="solid" borderRadius="20px" id="map" />
     }
 }

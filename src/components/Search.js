@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import ReactSearchBox from 'react-search-box'
 import Suggestions from './Suggestions';
+import { Form } from 'react-bootstrap';
 
 class Search extends Component {
   state = {
@@ -34,15 +34,13 @@ class Search extends Component {
   render() {
     return (
       <form>
-        <input
-          placeholder="Search Retail Store..."
+        <Form.Control
+          placeholder="Ex. Target, Best Buy..."
           ref={input => this.search = input}
           onChange={this.handleInputChange}
         />
         <Suggestions results={this.state.results} />
       </form>
-
-
     )
   }
 }
