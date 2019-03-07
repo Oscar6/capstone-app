@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BaseLayout from './components/BaseLayout';
-// import  { Provider } from 'react-redux';
-// import { createStore } from 'redux';
-// import reducer from './reducers';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Login/Login'
 import * as serviceWorker from './serviceWorker';
@@ -14,6 +11,9 @@ import App from './App';
 import ClientPage from './components/ClientPage';
 import Register from './Register/Register'
 import Dashboard from './Dashboard/Dashboard'
+import OrderForm from './components/OrderForm';
+import './App.css';
+
 
 // const store = createStore(reducer);
 

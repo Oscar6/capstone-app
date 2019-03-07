@@ -1,10 +1,31 @@
 import React, { Component } from 'react';
-import { Container , Row , Image } from 'react-bootstrap';
+import { Container , Row , Image , Col, Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'
 import './Styles/styles.css'
-
+import Map from '../src/components/Map';
+import OrderForm from '../src/components/OrderForm';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      checked: false,
+    }
+
+  }
+  render() {
+    return (
+      <div className="app">
+        <Form.Row>
+          <OrderForm as={Col} />
+          <Map as={Col} />
+        </Form.Row>
+      </div>
+
+    );
+  }
+
   render() {
     return (
       <div className = "AppHeader">
@@ -20,5 +41,9 @@ class App extends Component {
     );
   }
 }
+    
+
+
+
 
 export default App;
