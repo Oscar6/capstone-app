@@ -7,21 +7,16 @@ import BaseLayout from './components/BaseLayout';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Login/Login'
 import * as serviceWorker from './serviceWorker';
-import Loadable from 'react-loadable';
 import './App.scss'
-
+import './Styles/styles.css'
 //component imports
 import App from './App';
 import ClientPage from './components/ClientPage';
 import Register from './Register/Register'
-
+import Dashboard from './Dashboard/Dashboard'
 
 // const store = createStore(reducer);
 
-// const Login = Loadable({
-//   loader: () => import('./views/Pages/Login'),
-//   loading
-// });
 
 
 ReactDOM.render(
@@ -29,10 +24,11 @@ ReactDOM.render(
         <BrowserRouter>
         <BaseLayout>
         <Switch>
-          <Route exact path="/" component={App}/>
+          <Route  exact path="/" component={App}/>
           <Route path="/clientpage" component={ClientPage} />
           <Route path="/login" component={ Login } />
           <Route path="/register" component={ Register } />
+          <Route path="/dashboard" component={ Dashboard } />
         </Switch>
         </BaseLayout>
         </BrowserRouter>,

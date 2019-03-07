@@ -51,7 +51,7 @@ class Register extends Component {
                       </InputGroupAddon>
                       <Input type="password" placeholder="Repeat password" autoComplete="new-password" />
                     </InputGroup>
-                    {/* tButton bellow controls collapse for driver registration  */}
+                    {/* Button below controls collapse for driver registration  */}
                     <Button
                       onClick={() => this.setState({ open: !open })}
                       aria-controls="example-collapse-text"

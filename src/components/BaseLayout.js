@@ -12,10 +12,12 @@ class BaseLayout extends React.Component {
     render() {
         return (
             <div>
-                <NavBar></NavBar>
+                <div>
+                    <NavBar></NavBar>
+                </div>
                 <Container>
 
-                    BaseLayout.js {this.props.children}
+                    {this.props.children}
 
                 </Container>
             </div>
