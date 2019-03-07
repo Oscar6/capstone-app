@@ -1,0 +1,17 @@
+body{
+    background-image: url(./images/RocketWallpaper.png) ;
+    background-repeat: no-repeat;
+    background-position: 150% -5%;
+    padding-top: 70px;
+
+
+}
+.login{
+    margin-right: 1rem;
+}
+
+.AppHeader{
+    padding-top: 50px;
+    width: 60vh;
+    word-wrap: break-word;
+}
