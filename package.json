@@ -3,19 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "algolia-places-react": "^1.4.0",
+    "@coreui/coreui": "^2.1.7",
+    "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
+    "@coreui/icons": "0.3.0",
+    "@coreui/react": "^2.1.4",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "chart.js": "^2.7.3",
+    "classnames": "^2.2.6",
+    "core-js": "^2.6.5",
+    "coreui": "^0.4.2-alpha2",
     "deck.gl": "^6.4.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "flag-icon-css": "^3.2.1",
+    "font-awesome": "^4.7.0",
     "leaflet": "^1.4.0",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-app-polyfill": "^0.2.1",
+    "react-autosuggest-geocoder": "^1.0.1",
     "react-bootstrap": "^1.0.0-beta.5",
-    "react-bootstrap-typeahead": "^3.4.1",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.8.3",
+    "react-loadable": "^5.5.0",
     "react-map-gl": "^4.0.13",
     "react-redux": "^6.0.1",
+    "react-router-config": "^4.4.0-beta.6",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5",
-    "react-search-box": "^2.0.1",
+    "react-scripts": "^2.1.8",
+    "react-test-renderer": "^16.8.2",
+    "reactstrap": "^7.1.0",
     "redux": "^4.0.1",
+    "simple-line-icons": "^2.4.1",
     "styled-components": "^4.1.3"
   },
   "scripts": {
@@ -34,11 +55,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "bulma": "^0.7.4",
-    "parcel": "^1.11.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "@babel/plugin-proposal-class-properties": "^7.3.4"
   }
 }
