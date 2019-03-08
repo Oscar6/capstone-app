@@ -15,3 +15,6 @@ body{
     width: 60vh;
     word-wrap: break-word;
 }
+.btn-brand{
+    margin-right: 5px;
+}

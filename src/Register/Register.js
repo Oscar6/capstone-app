@@ -113,10 +113,10 @@ class Register extends Component {
                 <CardFooter className="p-4">
                   <Row>
                     <Col xs="12" sm="6">
-                      <Button className="btn-facebook mb-1" block><span>facebook</span></Button>
+                      <Button className="btn-facebook mb-1 btn-lrg" block><span>Facebook</span></Button>
                     </Col>
                     <Col xs="12" sm="6">
-                      <Button className="btn-twitter mb-1" block><span>google</span></Button>
+                      <Button className="btn-google-plus mb-1" block><span>Google</span></Button>
                     </Col>
                   </Row>
                 </CardFooter>
