@@ -10,6 +10,7 @@ const Wrapper = styled.div `
     border-style: ${props => props.borderStyle};
     border-width: ${props => props.borderWidth};
     border-radius: ${props => props.borderRadius};
+    margin-top: ${props => props.marginTop}
 `;
 
 export default class Map extends React.Component {
@@ -28,7 +29,7 @@ export default class Map extends React.Component {
     }
 
     render() {
-        return <Wrapper width="550px" height="550px" borderWidth="2px" borderStyle="solid" borderRadius="20px" id="map" />
+        return <Wrapper width="550px" height="550px" borderWidth="2px" borderStyle="solid" borderRadius="20px" marginTop="5%" id="map" />
     }
   };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form, Col, Row, Container } from 'react-bootstrap';
 import Search from './Search';
 
-class OrderForm extends React.Component {
+class ReviewForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -10,7 +10,7 @@ class OrderForm extends React.Component {
 
     render() {
         return (
-            <Container className="orderForm">
+            <Container className="reviewForm">
                 <Form>
 
                     <Form.Label>Store</Form.Label>
@@ -51,8 +51,8 @@ class OrderForm extends React.Component {
                         </Form.Group>
                     </Form.Row>
 
-                    <Button variant="primary" type="submit" className="orderButton">
-                        Submit Order
+                    <Button variant="primary" type="submit" className="reviewButton">
+                        Submit
                     </Button>
 
                 </Form>
@@ -61,4 +61,4 @@ class OrderForm extends React.Component {
     }
 }
 
-export default OrderForm;
+export default ReviewForm;
