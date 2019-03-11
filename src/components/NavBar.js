@@ -6,7 +6,7 @@ export default class NavBar extends Component {
             <Navbar bg="dark" variant="dark" fixed="top" >
                 <Navbar.Brand href="/">Navbar</Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="/dashboard">Home</Nav.Link>
                     <Nav.Link href="#features">Features</Nav.Link>
                     <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>

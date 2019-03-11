@@ -3,9 +3,9 @@ body{
     background-repeat: no-repeat;
     background-position: 150% -5%;
     padding-top: 70px;
-
-
+    background: cover;
 }
+
 .login{
     margin-right: 1rem;
 }
