@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Container , Row , Image , Col, Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'
 import './Styles/styles.css'
 // import Map from '../src/components/Map';
