@@ -12,9 +12,10 @@ import ClientPage from './components/ClientPage';
 import Register from './Register/Register'
 import Dashboard from './Dashboard/Dashboard'
 import UserDashboard from './Dashboard/UserDashboard'
-import OrderForm from './components/OrderForm';
+import DropDown from './components/DropDown';
+// import OrderForm from './components/OrderForm';
 import './Styles/App.css';
-import TestComponent from './components/TestComponent';
+// import TestComponent from './components/TestComponent';
 
 
 // const store = createStore(reducer);
@@ -32,7 +33,7 @@ ReactDOM.render(
           <Route path="/register" component={ Register } />
           <Route path="/dashboard" component={ Dashboard } />
           <Route path="/userdashboard" component={ UserDashboard } />
-          <Route path="/testcomponent" component={ TestComponent } />
+          <Route path="/dropdown" component={ DropDown } />
         </Switch>
         </BaseLayout>
         </BrowserRouter>,

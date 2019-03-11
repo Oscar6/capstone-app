@@ -1,20 +1,45 @@
 import React from 'react';
 import { Button, Form, Col, Row, Container } from 'react-bootstrap';
-import Search from './Search';
+// import Search from './Search';
+import DropDown from './DropDown';
+import axios from 'axios';
 
 class OrderForm extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            stores: [],
+            selectedStore: ""
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(this.state.selectedStore)
+        alert("Is this store correct?: " + this.state.selectedStore);
+      }
+
+    componentDidMount() {
+        axios.get(`stores.json`)
+           .then(({data}) => { 
+                console.log(data)
+                this.setState({
+                    stores: data.stores
+                });
+           })
+            .catch(error => console.log(error.response));
+      }
 
     render() {
         return (
             <Container className="orderForm">
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
 
-                    <Form.Label>Store</Form.Label>
-                    <Search />
+                    <Form.Group className="formGridStore">
+                        <DropDown stores={this.state.stores} />
+                    </Form.Group>
 
                     <Form.Group className="formGridStore">
                         <Form.Label>Password</Form.Label>
@@ -40,7 +65,7 @@ class OrderForm extends React.Component {
                         <Form.Group as={Col} className="formGridStore">
                             <Form.Label>State</Form.Label>
                             <Form.Control as="select">
-                                <option>Choose...</option>
+                                <option>Select...</option>
                                 <option>Texas</option>
                             </Form.Control>
                         </Form.Group>
