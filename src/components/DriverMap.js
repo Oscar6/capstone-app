@@ -1,36 +1,61 @@
 import React from "react";
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import styled from 'styled-components';
+import { Map as LeafletMap, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "../Styles/App.css";
 
+export const storeIcon = new L.Icon({
+  iconUrl: require("../assets/box.png"),
+  iconRetinaUrl: require("../assets/box.png"),
+  iconAnchor: [5, 55],
+  popupAnchor: [10, -44],
+  iconSize: [25, 30],
+  shadowSize: [68, 95],
+  shadowAnchor: [20, 92]
+});
 
-const Wrapper = styled.div `
-    width: ${props => props.width};
-    height: ${props => props.height};
-    border-style: ${props => props.borderStyle};
-    border-width: ${props => props.borderWidth};
-    border-radius: ${props => props.borderRadius};
-`;
+class DriverMap extends React.Component {
+  render() {
+    return (
+      <LeafletMap className="leaflet-container" style={{ height: 300 + 'px', width: 1068 + 'px', marginTop: 20 + 'px' }}
+        center={[29.7604, -95.3698]}
+        zoom={11}
+        maxZoom={18}
+        attributionControl={true}
+        zoomControl={false}
+        doubleClickZoom={true}
+        scrollWheelZoom={true}
+        dragging={true}
+        animate={true}
+        easeLinearity={0.35}
+      >
+        <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}" />
+        <Marker position={[29.7316085, -95.4649623]} icon={storeIcon}>
+          <Popup>
+            Pick Up: <br />
+            DigitalCrafts <br />
+            3302 Canal St
+            <br />
+            Houston, TX 77003
+            <br />
+            Item(s):
+            <br />
+            Displays
+            <br />
+            Return: <br />
+            Best Buy <br />
+            100 Meyerland Plaza Mall
+            <br />
+            Houston, TX 77096
+            <br />
+            Store Hours:
+            <br />
+            Mon-Sat: 10AM-9PM & Sun 11AM-8P
+          </Popup>
+        </Marker>
+      </LeafletMap>
+    );
+  }
+}
 
-
-export default class DriverMap extends React.Component {
-    
-    componentDidMount(){
-        
-        this.map = L.map('map', {
-            center: [29.7604, -95.3698],
-            zoom: 12,
-            zoomControl: false
-        });
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-            detectRetina: true,
-            maxZoom: 20,
-            maxNative: 17,
-        }).addTo(this.map);
-    }
-
-    render() {
-        return <Wrapper width="100%" height="100%" borderWidth="2px" borderStyle="solid" borderRadius="20px" id="map" />
-    }
-  };
+export default DriverMap;
 

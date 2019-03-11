@@ -374,8 +374,8 @@ class Dashboard extends Component {
                     </ButtonToolbar>
                   </Col>
                 </Row>
-                <div className="chart-wrapper" style={{ height: 300 + 'px', marginTop: 40 + 'px' }}>
-                  <DriverMap />
+                <div className="chart-wrapper">
+                  <DriverMap/>
                 </div>
               </CardBody>
               <CardFooter>
