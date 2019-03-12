@@ -14,14 +14,11 @@ import {
   InputGroupText,
   Row
 } from "reactstrap";
-import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from "react-google-login";
+import Facebook from '../components/Facebook'
 
 class Login extends Component {
   render() {
-    const responseFacebook = (response) => {
-      console.log(response);
-    }
 
     const responseGoogle = response => {
       console.log(response);
@@ -68,25 +65,26 @@ class Login extends Component {
                             Login
                           </Button>
                         </Col>
+                        <Col xs="12" className="orText">
+                        <p>OR</p>
+                        </Col>
+                        <Col xs="12" className="socialLogin">
+                        <Facebook />
+                        <GoogleLogin
+                          className="googleButton"
+                          clientId="613699581514-9qdtoqckobpurr3ksfe35k6v09n3eqvg.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
+                          buttonText="Google"
+                          onSuccess={responseGoogle}
+                          onFailure={responseGoogle}
+                        />
+                        </Col>
                         <Col xs="6" className="text-right">
                           <Button color="link" className="px-0">
                             Forgot password?
                           </Button>
                         </Col>
                       </Row>
-                      <Row>
-                        <FacebookLogin
-                          appId="" //APP ID NOT CREATED YET
-                          fields="name,email,picture"
-                          callback={responseFacebook}
-                        />
-                        <GoogleLogin
-                          clientId="613699581514-9qdtoqckobpurr3ksfe35k6v09n3eqvg.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
-                          buttonText="Google"
-                          onSuccess={responseGoogle}
-                          onFailure={responseGoogle}
-                        />
-                      </Row>
+                        
                     </Form>
                   </CardBody>
                 </Card>

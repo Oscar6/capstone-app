@@ -2,8 +2,10 @@ body{
     background-image: url(./images/RocketWallpaper.png) ;
     background-repeat: no-repeat;
     background-position: 150% -5%;
+    background-attachment: fixed;
     padding-top: 70px;
     background: cover;
+    /* background-color: #OBD391; */
 }
 
 .login{
@@ -17,4 +19,39 @@ body{
 }
 .btn-brand{
     margin-right: 5px;
+}
+
+.orText {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    color: #73818f;
+    font-size: 20px;
+}
+
+.socialLogin {
+    /* margin-top: 6px; */
+    margin-bottom: 20px;
+    height: 100%;
+    border: 1px solid #e4e7ea;
+    border-radius: 0.25em;
+}
+
+.facebookButton {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn-facebook {
+    height: 100%;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px
+}
+
+.googleButton{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 20%;
+    border-radius: 20px;
 }
