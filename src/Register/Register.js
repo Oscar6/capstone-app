@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import Collapse from 'react-bootstrap/Collapse'
+import Facebook from '../components/Facebook'
+
 class Register extends Component {
   constructor(props, context) {
     super(props, context);
 
     this.state = {
       open: false,
+      isLoggedin:false
     };
   }
   render() {
@@ -27,7 +30,7 @@ class Register extends Component {
                           <i className="icon-user"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="text" placeholder="Username" autoComplete="username" />
+                      <Input type="text" placeholder="Email" autoComplete="username" />
                     </InputGroup>
                     <InputGroup className="mb-3">
                       <InputGroupAddon addonType="prepend">
@@ -56,9 +59,12 @@ class Register extends Component {
                       onClick={() => this.setState({ open: !open })}
                       aria-controls="example-collapse-text"
                       aria-expanded={open}
+                      size="lg"
+                      color= "primary"
                       style={{ marginBottom: '1rem' }}
+                      block
                     >
-                      Driver
+                      Register as a driver
         </Button>
                     
                     <Collapse in={this.state.open}>
@@ -66,43 +72,37 @@ class Register extends Component {
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="icon-lock"></i>
+                              <i className="icon-user"></i>
                             </InputGroupText>
                           </InputGroupAddon>
-                          <Input type="text" placeholder="Something" autoComplete="" />
+                          <Input type="text" placeholder="Driver License # " autoComplete="" />
                         </InputGroup>
 
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="icon-lock"></i>
+                              <i className="icon-user"></i>
                             </InputGroupText>
                           </InputGroupAddon>
-                          <Input type="text" placeholder="Something" autoComplete="" />
+                          <Input type="text" placeholder="Date of Birth MM/DD/YYYY" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="icon-lock"></i>
-                            </InputGroupText>
+                            <InputGroupText>🚗</InputGroupText>
                           </InputGroupAddon>
-                          <Input type="text" placeholder="Something" autoComplete="" />
+                          <Input type="text" placeholder="Vehicle Make" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="icon-lock"></i>
-                            </InputGroupText>
+                            <InputGroupText>🚗</InputGroupText>
                           </InputGroupAddon>
-                          <Input type="text" placeholder="Something" autoComplete="" />
+                          <Input type="text" placeholder="Vehicle Model" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="icon-lock"></i>
-                            </InputGroupText>
+                            <InputGroupText>🚗</InputGroupText>
                           </InputGroupAddon>
-                          <Input type="text" placeholder="Something" autoComplete="" />
+                          <Input type="number" placeholder="Vehicle Year" autoComplete="" />
                         </InputGroup>
                       </div>
                     </Collapse>
@@ -112,12 +112,15 @@ class Register extends Component {
                 </CardBody>
                 <CardFooter className="p-4">
                   <Row>
-                    <Col xs="12" sm="6">
-                      <Button className="btn-facebook mb-1 btn-lrg" block><span>Facebook</span></Button>
+                    {/* <Col xs="12" sm="6">
+                      
+                          <Button className="btn-facebook mb-1 btn-lrg" block><span>Facebook</span></Button>
+                        <Facebook />
+                        
                     </Col>
                     <Col xs="12" sm="6">
                       <Button className="btn-google-plus mb-1" block><span>Google</span></Button>
-                    </Col>
+                    </Col> */}
                   </Row>
                 </CardFooter>
               </Card>

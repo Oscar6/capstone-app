@@ -18,3 +18,10 @@ body{
 .btn-brand{
     margin-right: 5px;
 }
+
+.facebookButton{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}

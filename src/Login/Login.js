@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import Facebook from '../components/Facebook'
 
 class Login extends Component {
   render() {
@@ -35,6 +36,7 @@ class Login extends Component {
                         <Col xs="6">
                           <Button color="primary" className="px-4">Login</Button>
                         </Col>
+                        <Facebook />
                         <Col xs="6" className="text-right">
                           <Button color="link" className="px-0">Forgot password?</Button>
                         </Col>
