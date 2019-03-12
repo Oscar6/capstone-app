@@ -374,9 +374,9 @@ class Dashboard extends Component {
                     </ButtonToolbar>
                   </Col>
                 </Row>
-                <div className="chart-wrapper">
-                  <DriverMap/>
-                </div>
+                
+                  <DriverMap />
+                
               </CardBody>
               <CardFooter>
                 <Row className="text-center">

@@ -12,7 +12,9 @@ class Register extends Component {
     };
   }
   render() {
+
     const { open } = this.state;
+
     return (
       <div className="app flex-row align-items-center">
         <Container>
