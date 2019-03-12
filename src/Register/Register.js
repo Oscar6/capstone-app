@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import Collapse from 'react-bootstrap/Collapse'
+
+// import UserDashboard from '../Dashboard/UserDashboard';
+
 class Register extends Component {
   constructor(props, context) {
     super(props, context);
@@ -10,7 +13,9 @@ class Register extends Component {
     };
   }
   render() {
+
     const { open } = this.state;
+
     return (
       <div className="app flex-row align-items-center">
         <Container>
