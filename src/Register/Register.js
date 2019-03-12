@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import Collapse from 'react-bootstrap/Collapse'
-import Facebook from '../components/Facebook'
 
 class Register extends Component {
   constructor(props, context) {
@@ -9,7 +8,7 @@ class Register extends Component {
 
     this.state = {
       open: false,
-      isLoggedin:false
+      isLoggedin: false
     };
   }
   render() {
@@ -60,13 +59,13 @@ class Register extends Component {
                       aria-controls="example-collapse-text"
                       aria-expanded={open}
                       size="lg"
-                      color= "primary"
+                      color="primary"
                       style={{ marginBottom: '1rem' }}
                       block
                     >
                       Register as a driver
         </Button>
-                    
+
                     <Collapse in={this.state.open}>
                       <div>
                         <InputGroup className="mb-4">
@@ -88,19 +87,29 @@ class Register extends Component {
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>                            
+                            <span role="img" aria-label="car emoji">
+                              🚗
+                            </span></InputGroupText>
                           </InputGroupAddon>
                           <Input type="text" placeholder="Vehicle Make" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>                            
+                            <span role="img" aria-label="car emoji">
+                              🚗
+                            </span></InputGroupText>
                           </InputGroupAddon>
                           <Input type="text" placeholder="Vehicle Model" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
+                            </span>
+                            </InputGroupText>
                           </InputGroupAddon>
                           <Input type="number" placeholder="Vehicle Year" autoComplete="" />
                         </InputGroup>
