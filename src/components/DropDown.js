@@ -22,7 +22,6 @@ class DropDown extends React.Component {
       return <option key={index}>{stores.name + " " + "@"  + stores.address}</option>;
     });
     return (
-      <Form>
         <Form.Label>
           Store
           <br />
@@ -31,8 +30,6 @@ class DropDown extends React.Component {
             {options}
           </Form.Control>
         </Form.Label>
-        <br />
-      </Form>
     );
   }
 }

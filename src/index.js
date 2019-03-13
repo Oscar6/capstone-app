@@ -9,9 +9,11 @@ import './Styles/styles.css'
 //component imports
 import App from './App';
 import ClientPage from './components/ClientPage';
-import Register from './Register/Register'
-import Dashboard from './Dashboard/Dashboard'
-import UserDashboard from './Dashboard/UserDashboard'
+import Register from './Register/Register';
+import Dashboard from './Dashboard/Dashboard';
+import UserDashboard from './Dashboard/UserDashboard';
+import About from './components/About';
+import FAQ from './components/FAQ';
 import './Styles/App.css';
 
 
@@ -30,6 +32,8 @@ ReactDOM.render(
           <Route path="/register" component={ Register } />
           <Route path="/dashboard" component={ Dashboard } />
           <Route path="/userdashboard" component={ UserDashboard } />
+          <Route path="/about" component={ About } />
+          <Route path="/faq" component={ FAQ } />
         </Switch>
         </BaseLayout>
         </BrowserRouter>,
