@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, Col, Row, Container } from 'react-bootstrap';
+import { Button, Form, Col, Container } from 'react-bootstrap';
 // import Search from './Search';
 import DropDown from './DropDown';
 import axios from 'axios';
@@ -19,19 +19,19 @@ class OrderForm extends React.Component {
         event.preventDefault();
         console.log(this.state.selectedStore)
         alert("Is this store correct?: " + this.state.selectedStore);
-      }
+    }
 
     componentDidMount() {
         axios.get(`stores.json`)
-           .then(({data}) => { 
+            .then(({ data }) => {
                 console.log(data)
                 this.setState({
                     stores: data.stores
                 });
-           })
+            })
             .catch(error => console.log(error.response));
-      }
-      
+    }
+
     render() {
         return (
             <Container className="orderForm">

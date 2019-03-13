@@ -66,8 +66,7 @@ class Register extends Component {
                       block
                     >
                       Register as a driver
-        </Button>
-
+                    </Button>
                     <Collapse in={this.state.open}>
                       <div>
                         <InputGroup className="mb-4">
@@ -78,7 +77,6 @@ class Register extends Component {
                           </InputGroupAddon>
                           <Input type="text" placeholder="Driver License # " autoComplete="" />
                         </InputGroup>
-
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
@@ -89,18 +87,18 @@ class Register extends Component {
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>                            
-                            <span role="img" aria-label="car emoji">
-                              🚗
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
                             </span></InputGroupText>
                           </InputGroupAddon>
                           <Input type="text" placeholder="Vehicle Make" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>                            
-                            <span role="img" aria-label="car emoji">
-                              🚗
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
                             </span></InputGroupText>
                           </InputGroupAddon>
                           <Input type="text" placeholder="Vehicle Model" autoComplete="" />
@@ -117,7 +115,6 @@ class Register extends Component {
                         </InputGroup>
                       </div>
                     </Collapse>
-
                     <Button color="success" block>Create Account</Button>
                   </Form>
                 </CardBody>
