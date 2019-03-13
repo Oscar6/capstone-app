@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form, Col, Row, Container } from 'react-bootstrap';
-import Search from './Search';
+// import Search from './Search';
+import DropDown from './DropDown';
 import axios from 'axios';
 
 class OrderForm extends React.Component {
@@ -55,15 +56,38 @@ class OrderForm extends React.Component {
 
         axios.post('/return-data', formData )
 
+        this.state = {
+            stores: [],
+            selectedStore: ""
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(this.state.selectedStore)
+        alert("Is this store correct?: " + this.state.selectedStore);
+      }
+
+    componentDidMount() {
+        axios.get(`stores.json`)
+           .then(({data}) => { 
+                console.log(data)
+                this.setState({
+                    stores: data.stores
+                });
+           })
+            .catch(error => console.log(error.response));
+      }
+      
     render() {
         return (
             <Container className="orderForm">
                 <Form onSubmit={this.handleSubmit}>
 
-                    <Form.Label>Store</Form.Label>
-                    <Search />
+                    <Form.Group className="formGridStore">
+                        <DropDown stores={this.state.stores} />
+                    </Form.Group>
 
                     <Form.Group className="formGridStore">
                         <Form.Label>Item</Form.Label>
@@ -90,7 +114,7 @@ class OrderForm extends React.Component {
                         <Form.Group as={Col} className="formGridStore">
                             <Form.Label>State</Form.Label>
                             <Form.Control as="select">
-                                <option>Choose...</option>
+                                <option>Select...</option>
                                 <option>Texas</option>
                             </Form.Control>
                         </Form.Group>
@@ -112,55 +136,3 @@ class OrderForm extends React.Component {
 }
 
 export default OrderForm;
-
-
-
-
-
-// <Container className="orderForm">
-// <Form>
-
-//     <Form.Label>Store</Form.Label>
-//     <Search />
-
-//     <Form.Group className="formGridStore">
-//         <Form.Label>Password</Form.Label>
-//         <Form.Control type="password" placeholder="Password" />
-//     </Form.Group>
-
-//     <Form.Group className="formGridStore">
-//         <Form.Label>Address</Form.Label>
-//         <Form.Control placeholder="1234 Main St" />
-//     </Form.Group>
-
-//     <Form.Group className="formGridStore">
-//         <Form.Label>Address 2</Form.Label>
-//         <Form.Control placeholder="Apartment, studio, or floor" />
-//     </Form.Group>
-
-//     <Form.Row>
-//         <Form.Group as={Col} controlId="formGridStore">
-//             <Form.Label>City</Form.Label>
-//             <Form.Control />
-//         </Form.Group>
-
-//         <Form.Group as={Col} className="formGridStore">
-//             <Form.Label>State</Form.Label>
-//             <Form.Control as="select">
-//                 <option>Choose...</option>
-//                 <option>Texas</option>
-//             </Form.Control>
-//         </Form.Group>
-
-//         <Form.Group className="formGridStore">
-//             <Form.Label>Zip</Form.Label>
-//             <Form.Control />
-//         </Form.Group>
-//     </Form.Row>
-
-//     <Button variant="primary" type="submit" className="orderButton">
-//         Submit Order
-//     </Button>
-
-// </Form>
-// </Container>

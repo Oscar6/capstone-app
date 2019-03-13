@@ -55,3 +55,11 @@ label.form-label {
     margin-left: 30%;
 }
 
+.leaflet-container {
+    height: 550px;
+    width: 550px;
+    border-width: 2px; 
+    border-style: solid;
+    border-radius: 20px; 
+    margin-top: 5%;
+}

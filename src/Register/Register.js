@@ -19,11 +19,13 @@ class Register extends Component {
 
     this.state = {
       open: false,
+      isLoggedin:false
     };
-  }    
+  }
+  render() {
 
-  render() {   
     const { open } = this.state;
+
     return (
       <div className="app flex-row align-items-center">
         <Formik
@@ -104,9 +106,12 @@ class Register extends Component {
                       onClick={() => this.setState({ open: !open })}
                       aria-controls="example-collapse-text"
                       aria-expanded={open}
+                      size="lg"
+                      color= "primary"
                       style={{ marginBottom: '1rem' }}
+                      block
                     >
-                      Driver
+                      Register as a driver
         </Button>
                     
                     <Collapse in={this.state.open}>
@@ -114,7 +119,7 @@ class Register extends Component {
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="icon-lock"></i>
+                              <i className="icon-user"></i>
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input name="driversLicenseNumber" type="text" onChange={handleChange} value={values.driversLicenseNumber} placeholder="Drivers License Number" autoComplete="" />
@@ -123,33 +128,47 @@ class Register extends Component {
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="icon-lock"></i>
+                              <i className="icon-user"></i>
                             </InputGroupText>
+                          </InputGroupAddon>
+                          <Input type="text" placeholder="Date of Birth MM/DD/YYYY" autoComplete="" />
+                        </InputGroup>
+                        <InputGroup className="mb-4">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>🚗</InputGroupText>
                           </InputGroupAddon>
                           <Input name="carBrand" type="text" onChange={handleChange} value={values.carBrand} placeholder="Car Make" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="icon-lock"></i>
-                            </InputGroupText>
+                            <InputGroupText>🚗</InputGroupText>
                           </InputGroupAddon>
                           <Input name="carModel" type="text" onChange={handleChange} value={values.carModel} placeholder="Car Model" autoComplete="" />
                         </InputGroup>
+                        <InputGroup className="mb-4">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>🚗</InputGroupText>
+                          </InputGroupAddon>
+                          <Input type="number" placeholder="Vehicle Year" autoComplete="" />
+                        </InputGroup>
                       </div>
                     </Collapse>
-
                     <Button color="success" block>Create Account</Button>
                   </Form>
                 </CardBody>
                 <CardFooter className="p-4">
                   <Row>
-                    <Col xs="12" sm="6">
-                      <Button className="btn-facebook mb-1" block><span>facebook</span></Button>
+                    {/* <Col xs="12" sm="6">
+                      
+                          <Button className="btn-facebook mb-1 btn-lrg" block><span>Facebook</span></Button>
+                        <Facebook />
+                        
                     </Col>
                     <Col xs="12" sm="6">
                       <Button className="btn-twitter mb-1" type="submit" block disabled={isSubmitting}><span>twitter</span></Button>
                     </Col>
+                      <Button className="btn-google-plus mb-1" block><span>Google</span></Button>
+                    </Col> */}
                   </Row>
                 </CardFooter>
               </Card>
