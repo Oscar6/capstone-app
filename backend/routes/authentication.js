@@ -19,19 +19,27 @@ function tokenForUser(user){
 
 
 router.post('/signin', (req,res)=>{
+    let emaillUser = req.body.email;
+    let password = req.body.password
+
+    db.user.find({where: {email: emailUser}})
+    .then((results)=>{
+        console.log(results)
+    })
     res.json({token: tokenForUser(req.user)})
 })
 
 router.post('/signup', (req,res)=>{
-    let fnameUser = req.body.fname;
-    let lnameUser = req.body.lname;
+    // let fnameUser = req.body.fname;
+    // let lnameUser = req.body.lname;
+    let username = req.body.username
     let emailUser = req.body.email;
     let passwordEncrypt = bcrypt.hashSync(req.body.password, 8)
-    let dlicenseUser = req.body.dlicense;
-    let ageUser = req.body.age;
-    let yearCar = req.body.year;
-    let makeCar = req.body.make;
-    let modelCar = req.body.make;
+    let driversLicenseNumber = req.body.driversLicenseNumber;
+    // let ageUser = req.body.age;
+    let yearCar = req.body.carYear;
+    let makeCar = req.body.carMake;
+    let modelCar = req.body.carModel;
     
     db.user.find({where: {email: emailUser}})
     .then((results)=>{
