@@ -264,6 +264,19 @@ class Dashboard extends Component {
 
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
+//   componentDidMount() {
+//     axios.get(`stores.json`)
+//         .then(({
+//             data
+//         }) => {
+//             // console.log(data)
+//             this.setState({
+//                 stores: data.stores
+//             });
+//         })
+//         .catch(error => console.log(error.response));
+// }
+
   render() {
 
     return (

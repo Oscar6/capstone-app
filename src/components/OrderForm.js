@@ -63,6 +63,7 @@ class OrderForm extends React.Component {
     handleSubmit(e){
         // console.log(this.state.itemName)
         e.preventDefault();
+        
 
         if (this.uploadReceiptInput.files[0] === undefined) {
             alert("No file was uploaded")
@@ -74,8 +75,10 @@ class OrderForm extends React.Component {
         formData.append('imageItem', this.uploadItemInput.files[0])
         formData.append('imageReceipt', this.uploadReceiptInput.files[0])
 
-        axios.post('/return-data', formData )
+        axios.post('/return-data', formData );
+        e.target.reset();
     }
+
 
     componentDidMount() {
         axios.get(`stores.json`)
