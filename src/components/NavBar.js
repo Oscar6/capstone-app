@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { Navbar, Nav, Form } from 'react-bootstrap'
 import { Button } from 'reactstrap'
 import Img from '../assets/mule2.png'
+import {Link} from 'react-router-dom'
 
 
 export default class NavBar extends Component {
     render() {
         return (
             <Navbar bg="dark" variant="dark" fixed="top">
-                <Navbar.Brand href="/" >
+                <Navbar.Brand><Link to="/" >
                     <img
                         src={Img}
                         width="70vh"
@@ -18,12 +19,12 @@ export default class NavBar extends Component {
                         className="img-responsive d-inline-block align-top"
                         alt="Mule"
                         overflow='hidden'
-                    />
+                    /></Link>
                 </Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/About">About Us</Nav.Link>
-                    <Nav.Link href="/FAQ">FAQ</Nav.Link>
+                    <Nav.Link><Link to="/dashboard">Home</Link></Nav.Link>
+                    <Nav.Link><Link to="/about">About Us</Link></Nav.Link>
+                    <Nav.Link><Link to="/faq">FAQ</Link></Nav.Link>
                 </Nav>
                 <Form inline>
                     <Button href="https://www.facebook.com/mule.app.96" className="btn-facebook btn-brand icon"><i className="fa fa-facebook" target="blank" ></i></Button>

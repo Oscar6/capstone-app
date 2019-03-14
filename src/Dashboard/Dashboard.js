@@ -26,6 +26,9 @@ import {
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle } from '@coreui/coreui/dist/js/coreui-utilities'
 import DriverMap from '../components/DriverMap'
+import axios from 'axios';
+
+
 
 
 const brandPrimary = getStyle('--primary')
@@ -225,6 +228,8 @@ const cardChartOpts4 = {
   },
 };
 
+
+
 // Main Chart
 
 
@@ -244,11 +249,18 @@ class Dashboard extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  // toggle() {
-  //   this.setState({
-  //     dropdownOpen: !this.state.dropdownOpen,
-  //   });
-  // }
+  componentDidMount(){
+    axios.get('/driver-data')
+      .then((result)=>{
+        console.log(result)
+      })
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen,
+    });
+  }
 
   toggle() {
     this.setState(prevState => ({
@@ -263,6 +275,19 @@ class Dashboard extends Component {
   }
 
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
+
+//   componentDidMount() {
+//     axios.get(`stores.json`)
+//         .then(({
+//             data
+//         }) => {
+//             // console.log(data)
+//             this.setState({
+//                 stores: data.stores
+//             });
+//         })
+//         .catch(error => console.log(error.response));
+// }
 
   render() {
 
