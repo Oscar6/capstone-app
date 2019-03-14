@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { Navbar, Nav, Form } from 'react-bootstrap'
 import { Button } from 'reactstrap'
 import Img from '../assets/mule2.png'
+import {Link} from 'react-router-dom'
 
 
 export default class NavBar extends Component {
     render() {
         return (
             <Navbar bg="dark" variant="dark" fixed="top">
-                <Navbar.Brand href="/" >
+                <Navbar.Brand to="/" >
                     <img
                         src={Img}
                         width="70vh"
@@ -21,8 +22,8 @@ export default class NavBar extends Component {
                     />
                 </Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="/dashboard">Home</Nav.Link>
-                    <Nav.Link href="#features">About Us</Nav.Link>
+                    <Nav.Link to="/dashboard">Home</Nav.Link>
+                    <Nav.Link><Link to="/about">About Us</Link></Nav.Link>
                     <Nav.Link href="#pricing">FAQ</Nav.Link>
                 </Nav>
                 <Form inline>
