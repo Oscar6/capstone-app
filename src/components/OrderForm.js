@@ -1,7 +1,9 @@
 import React from 'react';
-import { Button, Form, Col, Row, Container } from 'react-bootstrap';
+import { Button, Form, Col, Container } from 'react-bootstrap';
+// import {  Card, CardBody } from 'reactstrap';
 // import Search from './Search';
 import DropDown from './DropDown';
+// import Map from './Map';
 import axios from 'axios';
 
 class OrderForm extends React.Component {
@@ -19,22 +21,24 @@ class OrderForm extends React.Component {
         event.preventDefault();
         console.log(this.state.selectedStore)
         alert("Is this store correct?: " + this.state.selectedStore);
-      }
+    }
 
     componentDidMount() {
         axios.get(`stores.json`)
-           .then(({data}) => { 
+            .then(({ data }) => {
                 console.log(data)
                 this.setState({
                     stores: data.stores
                 });
-           })
+            })
             .catch(error => console.log(error.response));
-      }
-      
+    }
+
     render() {
         return (
             <Container className="orderForm">
+                {/* <Card className="orderForm"> */}
+                    {/* <CardBody> */}
                 <Form onSubmit={this.handleSubmit}>
 
                     <Form.Group className="formGridStore">
@@ -42,7 +46,7 @@ class OrderForm extends React.Component {
                     </Form.Group>
 
                     <Form.Group className="formGridStore">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>Mule</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
 
@@ -81,6 +85,9 @@ class OrderForm extends React.Component {
                     </Button>
 
                 </Form>
+                {/* <Map /> */}
+                {/* </CardBody>
+                </Card> */}
             </Container>
         );
     }

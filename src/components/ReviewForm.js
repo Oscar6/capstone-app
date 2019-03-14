@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React from 'react';
 // import { Button, Form, Col, Row, Container } from 'react-bootstrap';
 // import Search from './Search';
@@ -7,6 +8,17 @@
 //         super(props);
 
 //     }
+=======
+import React from 'react';
+import { Button, Form, Col, Container } from 'react-bootstrap';
+import Search from './Search';
+
+class ReviewForm extends React.Component {
+    // constructor(props) {
+    //     super(props);
+
+    // }
+>>>>>>> c07b523f5ee6ac353ca9e23d5a8dcb22d164f9cc
 
 //     render() {
 //         return (

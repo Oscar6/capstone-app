@@ -101,3 +101,10 @@ body{
     height: 20%;
     border-radius: 20px;
 }
+.fixed-top{
+    max-height: 8%;
+}
+.ModalMap{
+    width: 25rem;
+    height: 30rem;
+}

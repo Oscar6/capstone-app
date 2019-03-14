@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "reactstrap";
+import Img from "../assets/mule2.png";
 
 class About extends React.Component {
   constructor(props) {
@@ -12,7 +13,9 @@ class About extends React.Component {
         <div>
           <div className="bottomBorder">
             <h1>About Mule</h1>
-            <p className="aboutInfo">We are an on-demand item return service.</p>
+            <p className="aboutInfo">
+              We are an on-demand item return service.
+            </p>
           </div>
           <div className="bottomBorder">
             <h1>Vision</h1>
@@ -29,7 +32,9 @@ class About extends React.Component {
               the headache from traffic.
             </p>
           </div>
-          <p className="aboutInfo">Check out our <a href="/faq">FAQ</a> page for more info.</p>
+          <p className="aboutInfo">
+            Check out our <a href="/faq">FAQ</a> page for more info.
+          </p>
         </div>
       </Container>
     );

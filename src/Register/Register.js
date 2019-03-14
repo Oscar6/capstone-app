@@ -8,7 +8,7 @@ class Register extends Component {
 
     this.state = {
       open: false,
-      isLoggedin:false
+      isLoggedin: false
     };
   }
   render() {
@@ -61,13 +61,12 @@ class Register extends Component {
                       aria-controls="example-collapse-text"
                       aria-expanded={open}
                       size="lg"
-                      color= "primary"
+                      color="primary"
                       style={{ marginBottom: '1rem' }}
                       block
                     >
                       Register as a driver
-        </Button>
-                    
+                    </Button>
                     <Collapse in={this.state.open}>
                       <div>
                         <InputGroup className="mb-4">
@@ -78,7 +77,6 @@ class Register extends Component {
                           </InputGroupAddon>
                           <Input type="text" placeholder="Driver License # " autoComplete="" />
                         </InputGroup>
-
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
@@ -89,25 +87,34 @@ class Register extends Component {
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
+                            </span></InputGroupText>
                           </InputGroupAddon>
                           <Input type="text" placeholder="Vehicle Make" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
+                            </span></InputGroupText>
                           </InputGroupAddon>
                           <Input type="text" placeholder="Vehicle Model" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
+                            </span>
+                            </InputGroupText>
                           </InputGroupAddon>
                           <Input type="number" placeholder="Vehicle Year" autoComplete="" />
                         </InputGroup>
                       </div>
                     </Collapse>
-
                     <Button color="success" block>Create Account</Button>
                   </Form>
                 </CardBody>

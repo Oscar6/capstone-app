@@ -18,6 +18,10 @@ import {
   Progress,
   Row,
   Table,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
 } from 'reactstrap';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle } from '@coreui/coreui/dist/js/coreui-utilities'
@@ -234,14 +238,22 @@ class Dashboard extends Component {
     this.state = {
       dropdownOpen: false,
       radioSelected: 2,
-      dates: new Date().toLocaleString()
+      dates: new Date().toLocaleString(),
+      modal: false
     };
+    this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen,
     });
+  }
+
+  toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
   }
 
   onRadioBtnClick(radioSelected) {
@@ -374,35 +386,35 @@ class Dashboard extends Component {
                     </ButtonToolbar>
                   </Col>
                 </Row>
-                <div className="chart-wrapper">
-                  <DriverMap/>
-                </div>
+
+                <DriverMap />
+
               </CardBody>
               <CardFooter>
                 <Row className="text-center">
                   <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Visits</div>
-                    <strong>29.703 Users (40%)</strong>
+                    <div className="text-muted">Completion Rate</div>
+                    <strong> 40 Users (40%)</strong>
                     <Progress className="progress-xs mt-2" color="success" value="40" />
                   </Col>
                   <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Unique</div>
-                    <strong>24.093 Users (20%)</strong>
+                    <div className="text-muted">Acceptance Rate</div>
+                    <strong>10 Users (20%)</strong>
                     <Progress className="progress-xs mt-2" color="info" value="20" />
                   </Col>
                   <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Pageviews</div>
-                    <strong>78.706 Views (60%)</strong>
+                    <div className="text-muted">Average Customer Ratings</div>
+                    <strong> 10 Ratings (60%)</strong>
                     <Progress className="progress-xs mt-2" color="warning" value="60" />
                   </Col>
                   <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">New Users</div>
-                    <strong>22.123 Users (80%)</strong>
+                    <div className="text-muted">Cancelled Orders</div>
+                    <strong>8 Users (80%)</strong>
                     <Progress className="progress-xs mt-2" color="danger" value="80" />
                   </Col>
                   <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Bounce Rate</div>
-                    <strong>Average Rate (40.15%)</strong>
+                    <div className="text-muted">Commission Rate</div>
+                    <strong>Average Rate (15.15%)</strong>
                     <Progress className="progress-xs mt-2" color="primary" value="40" />
                   </Col>
                 </Row>
@@ -414,33 +426,32 @@ class Dashboard extends Component {
         <Row>
           <Col xs="6" sm="6" lg="3">
             <Suspense fallback={this.loading()}>
-                <div className="chart-wrapper">
-                </div>
+              <div className="chart-wrapper">
+              </div>
             </Suspense>
           </Col>
 
           <Col xs="6" sm="6" lg="3">
             <Suspense fallback={this.loading()}>
-                <div className="chart-wrapper">
-                </div>
+              <div className="chart-wrapper">
+              </div>
             </Suspense>
           </Col>
 
           <Col xs="6" sm="6" lg="3">
             <Suspense fallback={this.loading()}>
-              
-                <div className="chart-wrapper">
-                  
-                </div>
-              
+
+              <div className="chart-wrapper">
+
+              </div>
+
             </Suspense>
           </Col>
 
           <Col xs="6" sm="6" lg="3">
             <Suspense fallback={this.loading()}>
-                <div className="chart-wrapper">
-                 
-                </div>
+              <div className="chart-wrapper">
+              </div>
             </Suspense>
           </Col>
         </Row>
@@ -454,235 +465,287 @@ class Dashboard extends Component {
               <CardBody>
                 <Row>
                   <Col xs="12" md="12" xl="12">
-                    
-                <br />
-                <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
-                  <thead className="thead-light">
-                  <tr>
-                    <th className="text-center"><i className="icon-people"></i></th>
-                    <th>Pickup Location</th>
-                    <th className="text-center">Store Location</th>
-                    <th>Item Value</th>
-                    <th className="text-center">Order Status</th>
-                    <th>Driver Name</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'assets/img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-success"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Yiorgos Avraamu</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>50%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="success" value="50" />
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>10 sec ago</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'assets/img/avatars/2.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-danger"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Avram Tarasios</div>
-                      <div className="small text-muted">
 
-                        <span>Recurring</span> | Registered: Jan 1, 2015
+                    <br />
+                    <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
+                      <thead className="thead-light">
+                        <tr>
+                          <th className="text-center"><i className="icon-people"></i></th>
+                          <th>Dropoff Location</th>
+                          <th className="text-center">Pickup Location</th>
+                          <th>Estimated Value</th>
+                          <th className="text-center">Refund Type</th>
+                          <th>Driver Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="text-center">
+                            <div className="avatar">
+                              <strong>John Doe</strong>
+                            </div>
+                          </td>
+                          <td>
+                            <div>Fry's Electronics</div>
+                            <div className="small text-muted">
+                              <span>Delivered</span> | Address: 11565 US-59, Houston, TX 77031
                       </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>10%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
+                          </td>
+                          <td className="text-center">
+                            <div>
+                              <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                              <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                                <ModalHeader toggle={this.toggle}>Location Information</ModalHeader>
+                                <ModalBody>
+                                  <DriverMap className="ModalMap" />
+                                </ModalBody>
+                                <ModalFooter>
+                                  <Button color="primary" onClick={this.toggle}>Route</Button>{' '}
+                                  <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                                </ModalFooter>
+                              </Modal>
+                            </div>
+                          </td>
+                          <td>
+                            <div className="clearfix">
+                              <div className="float-left">
+                                <strong>$330</strong>
+                              </div>
+                              <div className="float-right">
+                                <small className="text-muted">Dell 15.6" Touchscreen 7th Gen...</small>
+                              </div>
+                            </div>
+                            <Progress className="progress-xs" color="success" value="50" />
+                          </td>
+                          <td className="text-center">
+                            <i className="fa fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
+                          </td>
+                          <td>
+                            <strong>Pablo Houston</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="text-center">
+                            <div className="avatar">
+                            <strong>Mike Hill</strong>
+                              
+                            </div>
+                          </td>
+                          <td>
+                            <div>Walmart</div>
+                            <div className="small text-muted">
+
+                            <span>Delivered</span> | Address: 111 Yale St, Houston, TX 77007
                       </div>
-                      <Progress className="progress-xs" color="info" value="10" />
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>5 minutes ago</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'assets/img/avatars/3.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-warning"></span>
+                          </td>
+                          <td className="text-center">
+                            <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                              <ModalHeader toggle={this.toggle}>Location Information</ModalHeader>
+                              <ModalBody>
+                                <DriverMap className="ModalMap" />
+                              </ModalBody>
+                              <ModalFooter>
+                                <Button color="primary" onClick={this.toggle}>Route</Button>{' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                              </ModalFooter>
+                            </Modal>
+                          </td>
+                          <td>
+                            <div className="clearfix">
+                              <div className="float-left">
+                                <strong>$79</strong>
+                              </div>
+                              <div className="float-right">
+                                <small className="text-muted">Roku Ultra Streaming Player </small>
+                              </div>
+                            </div>
+                            <Progress className="progress-xs" color="info" value="10" />
+                          </td>
+                          <td className="text-center">
+                            <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
+                          </td>
+                          <td>
+                            <strong>Pablo Houston</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="text-center">
+                            <div className="avatar">
+                            <strong>Josh Milk</strong>
+                              
+                            </div>
+                          </td>
+                          <td>
+                            <div>Walmart</div>
+                            <div className="small text-muted">
+                            <span>Pending</span> | Address: 5405 S Rice Ave, Houston, TX 77081
                       </div>
-                    </td>
-                    <td>
-                      <div>Quintin Ed</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                          </td>
+                          <td className="text-center">
+                            <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                              <ModalHeader toggle={this.toggle}>Location Information</ModalHeader>
+                              <ModalBody>
+                                <DriverMap className="ModalMap" />
+                              </ModalBody>
+                              <ModalFooter>
+                                <Button color="primary" onClick={this.toggle}>Route</Button>{' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                              </ModalFooter>
+                            </Modal>
+                          </td>
+                          <td>
+                            <div className="clearfix">
+                              <div className="float-left">
+                                <strong>$830</strong>
+                              </div>
+                              <div className="float-right">
+                                <small className="text-muted"> VIZIO E-Series 70" Class 4K HDR... </small>
+                              </div>
+                            </div>
+                            <Progress className="progress-xs" color="warning" value="74" />
+                          </td>
+                          <td className="text-center">
+                            <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
+                          </td>
+                          <td>
+                            <strong>Pablo Houston</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="text-center">
+                            <div className="avatar">
+                            <strong>Mark Rack</strong>
+                            </div>
+                          </td>
+                          <td>
+                            <div>Fry's Electronics</div>
+                            <div className="small text-muted">
+                            <span>Cancelled</span> | Address: 11565 US-59, Houston, TX 77031
                       </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>74%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
+                          </td>
+                          <td className="text-center">
+                            <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                              <ModalHeader toggle={this.toggle}>Location Information</ModalHeader>
+                              <ModalBody>
+                                <DriverMap className="ModalMap" />
+                              </ModalBody>
+                              <ModalFooter>
+                                <Button color="primary" onClick={this.toggle}>Route</Button>{' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                              </ModalFooter>
+                            </Modal>
+                          </td>
+                          <td>
+                            <div className="clearfix">
+                              <div className="float-left">
+                                <strong>$999</strong>
+                              </div>
+                              <div className="float-right">
+                                <small className="text-muted">Samsung Galaxy S10+ (128GB)</small>
+                              </div>
+                            </div>
+                            <Progress className="progress-xs" color="danger" value="98" />
+                          </td>
+                          <td className="text-center">
+                            <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
+                          </td>
+                          <td>
+                            <strong>Pablo Houston</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="text-center">
+                            <div className="avatar">
+                            <strong>Ye West</strong>
+                            </div>
+                          </td>
+                          <td>
+                            <div>Target</div>
+                            <div className="small text-muted">
+                            <span>Delivered</span> | Address: 8500 S Main St, Houston, TX 77025
                       </div>
-                      <Progress className="progress-xs" color="warning" value="74" />
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>1 hour ago</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'assets/img/avatars/4.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-secondary"></span>
+                          </td>
+                          <td className="text-center">
+                            <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                              <ModalHeader toggle={this.toggle}>Location Information</ModalHeader>
+                              <ModalBody>
+                                <DriverMap className="ModalMap" />
+                              </ModalBody>
+                              <ModalFooter>
+                                <Button color="primary" onClick={this.toggle}>Route</Button>{' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                              </ModalFooter>
+                            </Modal>
+                          </td>
+                          <td>
+                            <div className="clearfix">
+                              <div className="float-left">
+                                <strong>$289</strong>
+                              </div>
+                              <div className="float-right">
+                                <small className="text-muted">Bissell CrossWave Pet Pro Floor ...</small>
+                              </div>
+                            </div>
+                            <Progress className="progress-xs" color="info" value="22" />
+                          </td>
+                          <td className="text-center">
+                            <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
+                          </td>
+                          <td>
+                            <strong>Pablo Houston</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="text-center">
+                            <div className="avatar">
+                            <strong>Mike Jone</strong>
+                            </div>
+                          </td>
+                          <td>
+                            <div>Best Buy</div>
+                            <div className="small text-muted">
+                            <span>Delivered</span> | Address: 5133 Richmond Ave, Houston, TX 77056
                       </div>
-                    </td>
-                    <td>
-                      <div>Enéas Kwadwo</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>98%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="danger" value="98" />
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Last month</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'assets/img/avatars/5.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-success"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Agapetus Tadeáš</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>22%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="info" value="22" />
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Last week</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-                        <span className="avatar-status badge-danger"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Friderik Dávid</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>43%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="success" value="43" />
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Yesterday</strong>
-                    </td>
-                  </tr>
-                  </tbody>
-                  
-                </Table>
-                </Col>
+                          </td>
+                          <td className="text-center">
+                            <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                              <ModalHeader toggle={this.toggle}>Location Information</ModalHeader>
+                              <ModalBody>
+                                <DriverMap className="ModalMap" />
+                              </ModalBody>
+                              <ModalFooter>
+                                <Button color="primary" onClick={this.toggle}>Route</Button>{' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                              </ModalFooter>
+                            </Modal>
+                          </td>
+                          <td>
+                            <div className="clearfix">
+                              <div className="float-left">
+                                <strong>$429</strong>
+                              </div>
+                              <div className="float-right">
+                                <small className="text-muted">LG 55" Class 2160p 4K Ultra ...</small>
+                              </div>
+                            </div>
+                            <Progress className="progress-xs" color="success" value="43" />
+                          </td>
+                          <td className="text-center">
+                            <i className="fa fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
+                          </td>
+                          <td>
+                            <strong>Pablo Houston</strong>
+                          </td>
+                        </tr>
+                      </tbody>
+
+                    </Table>
+                  </Col>
                 </Row>
               </CardBody>
             </Card>

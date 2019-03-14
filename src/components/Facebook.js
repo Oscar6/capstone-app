@@ -13,7 +13,7 @@ export default class Facebook extends Component {
         picture: ''
     }
     responseFacebook = response => {
-        // console.log(response)
+        console.log(response)
         this.setState({
             isLoggedIn: true,
             UserID: response.userID,
