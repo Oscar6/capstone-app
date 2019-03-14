@@ -17,13 +17,13 @@ router.post('/return-data', (req,res)=>{
     let store = req.body.store
     let imageFileReceipt = req.files.imageReceipt
     let imageFileItem = req.files.imageItem
-    let imagePathReceipt = `${__dirname}/../../public/${imageFileReceipt.name}.jpg`
-    let imagePathItem = `${__dirname}/../../public/${imageFileItem.name}.jpg`
+    let imagePathReceipt = `${__dirname}/../../public/images/${imageFileReceipt.name}.jpg`
+    let imagePathItem = `${__dirname}/../../public/images/${imageFileItem.name}.jpg`
 
     db.returnItem.create({store: store, receiptImagePath: imagePathReceipt, itemImagePath: imagePathItem, itemName: itemName})
     
-    imageFileReceipt.mv(`${__dirname}/../../public/${imageFileReceipt.name}.jpg`)
-    imageFileItem.mv(`${__dirname}/../../public/${imageFileItem.name}.jpg`)
+    imageFileReceipt.mv(`${__dirname}/../../public/images/${imageFileReceipt.name}.jpg`)
+    imageFileItem.mv(`${__dirname}/../../public/images/${imageFileItem.name}.jpg`)
 
     
 
