@@ -20,19 +20,19 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      dlicense: {
+      driversLicenseNumber: {
         type: Sequelize.STRING
       },
-      age: {
-        type: Sequelize.INTEGER
-      },
-      year: {
-        type: Sequelize.INTEGER
-      },
-      make: {
+      dob: {
         type: Sequelize.STRING
       },
-      model: {
+      carYear: {
+        type: Sequelize.INTEGER
+      },
+      carMake: {
+        type: Sequelize.STRING
+      },
+      carModel: {
         type: Sequelize.STRING
       },
       createdAt: {

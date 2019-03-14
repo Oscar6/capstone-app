@@ -18,6 +18,8 @@ import Dashboard from './Dashboard/Dashboard'
 import UserDashboard from './Dashboard/UserDashboard'
 import './Styles/App.css';
 
+import moduleName from './'
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 

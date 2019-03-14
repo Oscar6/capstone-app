@@ -16,8 +16,18 @@ import {
 } from "reactstrap";
 import GoogleLogin from "react-google-login";
 import Facebook from '../components/Facebook'
+import { Formik } from "formik";
+import axios from "axios";
+import {AuthConsumer} from '../auth/AuthContext';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: ''
+    }
+  }
+
   render() {
 
     const responseGoogle = response => {
@@ -26,13 +36,42 @@ class Login extends Component {
 
     return (
       <div className="app flex-row align-items-center">
+      <Formik
+        initialValues={{
+          email: '',
+          password: ''
+        }}
+        onSubmit={(values)=>{
+          // console.log(values)
+          axios.post('/signin', values)
+          .then(res=>{
+              if(res.data.token){
+                this.props.history.push('/userdashboard')
+              }
+          })
+          .catch((err)=>{
+            if(err){
+              this.setState({
+                error: "Invalid email or password"
+              })
+            }
+          })
+        }}
+        >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleSubmit
+        })=>(
         <Container>
           <Row className="justify-content-center">
             <Col md="8">
               <CardGroup>
                 <Card className="p-4">
                   <CardBody>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                       <h1>Login</h1>
                       <p className="text-muted">Sign In to your account</p>
                       <InputGroup className="mb-3">
@@ -42,9 +81,12 @@ class Login extends Component {
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
+                          name="email"
                           type="text"
-                          placeholder="Username"
-                          autoComplete="username"
+                          onChange={handleChange}
+                          value={values.email}
+                          placeholder="email"
+                          autoComplete="email"
                         />
                       </InputGroup>
                       <InputGroup className="mb-4">
@@ -54,7 +96,10 @@ class Login extends Component {
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
+                          name="password"
                           type="password"
+                          onChange={handleChange}
+                          value={values.password}
                           placeholder="Password"
                           autoComplete="current-password"
                         />
@@ -66,6 +111,7 @@ class Login extends Component {
                           </Button>
                         </Col>
                         <Col xs="12" className="orText">
+                        {this.state.error}
                         <p>OR</p>
                         </Col>
                         <Col xs="12" className="socialLogin">
@@ -117,6 +163,8 @@ class Login extends Component {
             </Col>
           </Row>
         </Container>
+        )}
+        </Formik>
       </div>
     );
   }

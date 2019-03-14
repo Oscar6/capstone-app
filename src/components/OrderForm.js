@@ -10,7 +10,9 @@ class OrderForm extends React.Component {
         this.state = {
             itemName: '',
             imageReceipt: '',
-            imageItem: ''
+            imageItem: '',
+            stores: [],
+            selectedStore: ""
         }
         this.handleInputText = this.handleInputText.bind(this)
         this.handleReceiptFile = this.handleReceiptFile.bind(this)
@@ -40,14 +42,14 @@ class OrderForm extends React.Component {
     }
 
     handleSubmit(e){
-        console.log('form submitted')
         // console.log(this.state.itemName)
         e.preventDefault();
 
         if (this.uploadReceiptInput.files[0] === undefined) {
             alert("No file was uploaded")
-
         }
+
+        
 
         var formData = new FormData();
         formData.append('itemName', this.state.itemName)
@@ -55,40 +57,33 @@ class OrderForm extends React.Component {
         formData.append('imageReceipt', this.uploadReceiptInput.files[0])
 
         axios.post('/return-data', formData )
-
-        this.state = {
-            stores: [],
-            selectedStore: ""
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        console.log(this.state.selectedStore)
-        alert("Is this store correct?: " + this.state.selectedStore);
-      }
+    // handleSubmit(event) {
+    //     event.preventDefault();
+    //     // console.log(this.state.selectedStore)
+    //     alert("Is this store correct?: " + this.state.selectedStore);
+    //   }
 
     componentDidMount() {
         axios.get(`stores.json`)
-           .then(({data}) => { 
-                console.log(data)
+            .then(({
+                data
+            }) => {
+                // console.log(data)
                 this.setState({
                     stores: data.stores
                 });
-           })
+            })
             .catch(error => console.log(error.response));
-      }
-      
+    }
     render() {
         return (
             <Container className="orderForm">
                 <Form onSubmit={this.handleSubmit}>
-
                     <Form.Group className="formGridStore">
-                        <DropDown stores={this.state.stores} />
+                        <DropDown stores={this.state.stores}  />
                     </Form.Group>
-
                     <Form.Group className="formGridStore">
                         <Form.Label>Item</Form.Label>
                         <Form.Control name="itemName" placeholder="Microwave..." onChange={this.handleInputText} />

@@ -5,34 +5,39 @@ class DropDown extends React.Component {
   constructor() {
     super();
     this.state = {
-      stores: []
+      stores: [],
+      selectedStore: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.data });
+    console.log(event.target.value)
+    this.setState({ selectedStore: event.target.value });
   }
 
   render() {
     const { stores } = this.props;
-
+    console.log(stores)
+    console.log(this.props)
     var options = stores.map((stores, index) => {
+      // console.log(stores.name)
       return <option key={index}>{stores.name + " " + "@"  + stores.address}</option>;
     });
     return (
-      <Form>
+      
         <Form.Label>
           Store
           <br />
           <Form.Control as="select" onChange={this.handleChange} >
             <option>Select store</option>
             {options}
-          </Form.Control>
+          </Form.Control>        
+          {this.state.selectedStore}
         </Form.Label>
-        <br />
-      </Form>
+        
+      
     );
   }
 }

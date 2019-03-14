@@ -6,7 +6,8 @@ import axios from 'axios';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
-  username: Yup.string().min(5, "Username has to be at least 5 charecters").max(30, "Username exceeds character limit").required("Required"),
+  fname: Yup.string().required('First name is required'),
+  lname: Yup.string().required('Last name is required'),
   email: Yup.string().email("Email not valid").required('Email is required'),
   password: Yup.string().min(6, 'Password must be 6 character or longer').required('Password is required'),
   carYear: Yup.number()
@@ -30,19 +31,22 @@ class Register extends Component {
       <div className="app flex-row align-items-center">
         <Formik
           initialValues={{
-            username: '',
+            fname: '',
+            lname: '',
             email: '',
             password: '',
             confirm: '',
             driversLicenseNumber: '',
+            dob: '',
             carBrand: '',
             carModel: '',
-            carYear: 0
+            carYear: undefined
           }}
 
           validationSchema = {SignupSchema}
 
           onSubmit={(values) => {
+            console.log(values)
           if(values.password === !values.confirm){
             alert("Password does not match")
           }
@@ -56,7 +60,6 @@ class Register extends Component {
           touched,
           handleChange,
           handleSubmit,
-          isSubmitting,
           /* and other goodies */
         }) => (
         <Container>
@@ -73,9 +76,18 @@ class Register extends Component {
                           <i className="icon-user"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input name="username" type="text" onChange={handleChange} value={values.username} placeholder="Username" autoComplete="username" />
+                      <Input name="fname" type="text" onChange={handleChange} value={values.fname} placeholder="First Name" autoComplete="" />
                     </InputGroup>
-                    {touched.username && errors.username && <p>{errors.username}</p>}
+                    {touched.fname && errors.fname && <p>{errors.fname}</p>}
+                    <InputGroup className="mb-3">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="icon-user"></i>
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input name="lname" type="text" onChange={handleChange} value={values.lname} placeholder="Last Name" autoComplete="" />
+                    </InputGroup>
+                    {touched.lname && errors.lname && <p>{errors.lname}</p>}
                     <InputGroup className="mb-3">
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>@</InputGroupText>
@@ -100,7 +112,6 @@ class Register extends Component {
                       </InputGroupAddon>
                       <Input name="confirm" type="password" onChange={handleChange} value={values.confirm} placeholder="Confirm Password" autoComplete="new-password" />
                     </InputGroup>
-                    {/* {touched.confirm-password && errors.confirm-password && <p>{errors.confirm-password}</p>} */}
                     {/* Button below controls collapse for driver registration  */}
                     <Button
                       onClick={() => this.setState({ open: !open })}
@@ -124,14 +135,13 @@ class Register extends Component {
                           </InputGroupAddon>
                           <Input name="driversLicenseNumber" type="text" onChange={handleChange} value={values.driversLicenseNumber} placeholder="Drivers License Number" autoComplete="" />
                         </InputGroup>
-
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
                               <i className="icon-user"></i>
                             </InputGroupText>
                           </InputGroupAddon>
-                          <Input type="text" placeholder="Date of Birth MM/DD/YYYY" autoComplete="" />
+                          <Input name="dob" type="text" onChange={handleChange} value={values.dob} placeholder="Date of Birth MM/DD/YYYY" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
@@ -149,28 +159,13 @@ class Register extends Component {
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>🚗</InputGroupText>
                           </InputGroupAddon>
-                          <Input type="number" placeholder="Vehicle Year" autoComplete="" />
+                          <Input name="carYear" type='number' onChange={handleChange} value={values.carYear} placeholder="Vehicle Year" autoComplete="" />
                         </InputGroup>
                       </div>
                     </Collapse>
                     <Button color="success" block>Create Account</Button>
                   </Form>
                 </CardBody>
-                <CardFooter className="p-4">
-                  <Row>
-                    {/* <Col xs="12" sm="6">
-                      
-                          <Button className="btn-facebook mb-1 btn-lrg" block><span>Facebook</span></Button>
-                        <Facebook />
-                        
-                    </Col>
-                    <Col xs="12" sm="6">
-                      <Button className="btn-twitter mb-1" type="submit" block disabled={isSubmitting}><span>twitter</span></Button>
-                    </Col>
-                      <Button className="btn-google-plus mb-1" block><span>Google</span></Button>
-                    </Col> */}
-                  </Row>
-                </CardFooter>
               </Card>
             </Col>
           </Row>

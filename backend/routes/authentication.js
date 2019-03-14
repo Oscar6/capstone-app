@@ -19,33 +19,44 @@ function tokenForUser(user){
 
 
 router.post('/signin', (req,res)=>{
-    let emaillUser = req.body.email;
-    let password = req.body.password
+    console.log(req.body.email)
+    let email = req.body.email;
+    let password = req.body.password;
 
-    db.user.find({where: {email: emailUser}})
-    .then((results)=>{
-        console.log(results)
+    db.user.findOne({where: {email: email}})
+    .then((user)=>{
+        if (user){
+            bcrypt.compare(password, user.password, (err, result)=>{
+                if (result === true){
+                    console.log(req.user)
+                    res.json({token: tokenForUser(user)})
+                }
+                else if(result === false){
+                    res.send(err)
+                }
+            })
+        }
     })
-    res.json({token: tokenForUser(req.user)})
+    
 })
 
 router.post('/signup', (req,res)=>{
-    // let fnameUser = req.body.fname;
-    // let lnameUser = req.body.lname;
-    let username = req.body.username
-    let emailUser = req.body.email;
+    console.log(req.body.driversLicenseNumber)
+    let fname = req.body.fname;
+    let lname = req.body.lname;
+    let email = req.body.email;
     let passwordEncrypt = bcrypt.hashSync(req.body.password, 8)
     let driversLicenseNumber = req.body.driversLicenseNumber;
-    // let ageUser = req.body.age;
-    let yearCar = req.body.carYear;
-    let makeCar = req.body.carMake;
-    let modelCar = req.body.carModel;
+    let dob = req.body.dob;
+    let carYear = req.body.carYear;
+    let carBrand = req.body.carBrand;
+    let carModel = req.body.carModel;
     
-    db.user.find({where: {email: emailUser}})
+    db.user.findOne({where: {email: email}})
     .then((results)=>{
         if(!results){
             //create new user
-            db.user.create({fname: fnameUser, lname: lnameUser, email: emailUser, password: passwordEncrypt, dlicense: dlicenseUser, age: ageUser, year: yearCar, make: makeCar, model: modelCar})
+            db.user.create({fname: fname, lname: lname, email: email, password: passwordEncrypt, driversLicenseNumber: driversLicenseNumber, dob: dob, carYear: carYear, carBrand: carBrand, carModel: carModel})
             .then((user)=>{
                 return res.json({token: tokenForUser(user)})
             })
