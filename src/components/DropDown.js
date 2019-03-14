@@ -34,7 +34,7 @@ class DropDown extends React.Component {
         <Form.Label>
           Store
           <br />
-          <Form.Control as="select" onChange={this.handleChange} name="val">
+          <Form.Control as="select" name='val' onChange={this.handleChange} >
             <option>Select store</option>
             {options}
           </Form.Control>        

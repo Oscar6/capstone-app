@@ -17,6 +17,9 @@ module.exports = {
       itemImagePath: {
         type: Sequelize.STRING
       },
+      itemName: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
