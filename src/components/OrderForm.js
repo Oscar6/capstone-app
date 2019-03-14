@@ -28,7 +28,7 @@ class OrderForm extends React.Component {
     }
 
     handleInputText(e){
-        console.log(e.target.name)
+        // console.log(e.target.name)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -47,7 +47,7 @@ class OrderForm extends React.Component {
     }
 
     handleItemFile(e) {
-        console.log(e.target.files)
+        // console.log(e.target.files)
         if(!e.target.files[0]){
             this.setState({
                 imageItem: ''
@@ -73,6 +73,8 @@ class OrderForm extends React.Component {
         formData.append('imageReceipt', this.uploadReceiptInput.files[0])
 
         axios.post('/return-data', formData )
+
+        
     }
 
     componentDidMount() {

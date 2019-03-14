@@ -23,8 +23,8 @@ class DropDown extends React.Component {
 
   render() {
     const { stores } = this.props;
-    console.log(stores)
-    console.log(this.props)
+    // console.log(stores)
+    // console.log(this.props)
     var options = stores.map((stores, index) => {
       return <option key={index}>{stores.name + " " + "@" + stores.address}</option>;
     });
