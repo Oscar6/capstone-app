@@ -15,7 +15,8 @@ class DropDown extends React.Component {
   handleChange(event) {
     console.log(event.target.value)
     // this.setState({ selectedStore: event.target.value });
-    this.props.selectedStore((val))
+    var val = event.target.value
+    this.props.storeSelected(val)
   }
 
   
@@ -32,11 +33,10 @@ class DropDown extends React.Component {
         <Form.Label>
           Store
           <br />
-          <Form.Control as="select" value="val" onChange={this.handleChange} >
+          <Form.Control as="select" name='val' onChange={this.handleChange} >
             <option>Select store</option>
             {options}
           </Form.Control>        
-          {this.state.selectedStore}
         </Form.Label>
         
       
