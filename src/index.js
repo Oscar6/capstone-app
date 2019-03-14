@@ -20,7 +20,6 @@ import About from './components/About';
 import FAQ from './components/FAQ';
 import './Styles/App.css';
 
-import moduleName from './'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

@@ -22,8 +22,8 @@ export default class NavBar extends Component {
                 </Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="#features">About Us</Nav.Link>
-                    <Nav.Link href="#pricing">FAQ</Nav.Link>
+                    <Nav.Link href="/About">About Us</Nav.Link>
+                    <Nav.Link href="/FAQ">FAQ</Nav.Link>
                 </Nav>
                 <Form inline>
                     <Button href="https://www.facebook.com/mule.app.96" className="btn-facebook btn-brand icon"><i className="fa fa-facebook" target="blank" ></i></Button>
