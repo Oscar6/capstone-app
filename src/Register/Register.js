@@ -10,7 +10,8 @@ const SignupSchema = Yup.object().shape({
   lname: Yup.string().required('Last name is required'),
   email: Yup.string().email("Email not valid").required('Email is required'),
   password: Yup.string().min(6, 'Password must be 6 character or longer').required('Password is required'),
-  carYear: Yup.number()
+  carYear: Yup.number(),
+  address: Yup.string().required("Address is required")
   
 })
 
@@ -34,6 +35,7 @@ class Register extends Component {
             fname: '',
             lname: '',
             email: '',
+            address: '',
             password: '',
             confirm: '',
             driversLicenseNumber: '',
@@ -95,6 +97,13 @@ class Register extends Component {
                       <Input name="email" type="text" onChange={handleChange} value={values.email} placeholder="Email" autoComplete="email" />
                     </InputGroup>                    
                     {touched.email && errors.email && <p>{errors.email}</p>}
+                    <InputGroup className="mb-3">
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText><i className="icon-user"></i></InputGroupText>
+                      </InputGroupAddon>
+                      <Input name="address" type="text" onChange={handleChange} value={values.address} placeholder="Street address" autoComplete="address" />
+                    </InputGroup>                    
+                    {touched.address && errors.address && <p>{errors.address}</p>}
                     <InputGroup className="mb-3">
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>

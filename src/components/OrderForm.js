@@ -20,6 +20,13 @@ class OrderForm extends React.Component {
         this.handleReceiptFile = this.handleReceiptFile.bind(this)
         this.handleItemFile = this.handleItemFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSelect = this.handleSelect.bind(this)
+    }
+
+    handleSelect(val){
+        this.setState({
+            selectedStore: val
+        })
     }
 
     handleInputText(e){
@@ -30,7 +37,12 @@ class OrderForm extends React.Component {
     }
 
     handleReceiptFile(e) {
-        console.log(e.target.files)
+        // console.log(e.target.files)
+        if(!e.target.files[0]){
+            this.setState({
+                imageReceipt: ''
+            })
+        }
         this.setState({
             imageReceipt: e.target.files[0]
         })
@@ -38,8 +50,13 @@ class OrderForm extends React.Component {
 
     handleItemFile(e) {
         console.log(e.target.files)
+        if(!e.target.files[0]){
+            this.setState({
+                imageItem: ''
+            })
+        }
         this.setState({
-            imageItem: e.target.files[0].name
+            imageItem: e.target.files[0]
         })
     }
 
@@ -51,21 +68,14 @@ class OrderForm extends React.Component {
             alert("No file was uploaded")
         }
 
-        
-
         var formData = new FormData();
         formData.append('itemName', this.state.itemName)
+        formData.append('store', this.state.selectedStore)
         formData.append('imageItem', this.uploadItemInput.files[0])
         formData.append('imageReceipt', this.uploadReceiptInput.files[0])
 
         axios.post('/return-data', formData )
     }
-
-    // handleSubmit(event) {
-    //     event.preventDefault();
-    //     // console.log(this.state.selectedStore)
-    //     alert("Is this store correct?: " + this.state.selectedStore);
-    //   }
 
     componentDidMount() {
         axios.get(`stores.json`)
@@ -86,7 +96,7 @@ class OrderForm extends React.Component {
                     {/* <CardBody> */}
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group className="formGridStore">
-                        <DropDown stores={this.state.stores}  />
+                        <DropDown stores={this.state.stores} storeSelected={this.handleSelect} />
                     </Form.Group>
                     <Form.Group className="formGridStore">
                         <Form.Label>Item</Form.Label>

@@ -20,6 +20,9 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
+      address: {
+        type: Sequelize.STRING
+      },
       driversLicenseNumber: {
         type: Sequelize.STRING
       },

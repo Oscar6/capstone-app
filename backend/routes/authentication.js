@@ -46,6 +46,7 @@ router.post('/signup', (req,res)=>{
     let lname = req.body.lname;
     let email = req.body.email;
     let passwordEncrypt = bcrypt.hashSync(req.body.password, 8)
+    let address = req.body.address;
     let driversLicenseNumber = req.body.driversLicenseNumber;
     let dob = req.body.dob;
     let carYear = req.body.carYear;
@@ -56,7 +57,7 @@ router.post('/signup', (req,res)=>{
     .then((results)=>{
         if(!results){
             //create new user
-            db.user.create({fname: fname, lname: lname, email: email, password: passwordEncrypt, driversLicenseNumber: driversLicenseNumber, dob: dob, carYear: carYear, carBrand: carBrand, carModel: carModel})
+            db.user.create({fname: fname, lname: lname, email: email, password: passwordEncrypt, address: address, driversLicenseNumber: driversLicenseNumber, dob: dob, carYear: carYear, carBrand: carBrand, carModel: carModel})
             .then((user)=>{
                 return res.json({token: tokenForUser(user)})
             })
