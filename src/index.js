@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import BaseLayout from './components/BaseLayout';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Login from './Login/Login'
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware, compose} from 'redux';
+import reduxThunk from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
 import './App.scss'
 import './Styles/styles.css'
+import reducers from './reducers';
 //component imports
 import App from './App';
 import ClientPage from './components/ClientPage';
@@ -16,13 +20,20 @@ import About from './components/About';
 import FAQ from './components/FAQ';
 import './Styles/App.css';
 
+import moduleName from './'
 
-// const store = createStore(reducer);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+
+const store = createStore(reducers, {
+  auth: {authenticated: localStorage.getItem('token')}
+},
+  composeEnhancers(applyMiddleware(reduxThunk)));
 
 
 
 ReactDOM.render(
-    //   <Provider>
+      <Provider store={store}>
         <BrowserRouter>
         <BaseLayout>
         <Switch>
@@ -37,7 +48,7 @@ ReactDOM.render(
         </Switch>
         </BaseLayout>
         </BrowserRouter>,
-    //   </Provider>,
+      </Provider>,
       document.getElementById('root')
     )
 
