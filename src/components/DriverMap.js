@@ -12,6 +12,15 @@ export const boxIcon = new L.Icon({
   shadowSize: [68, 95],
   shadowAnchor: [20, 92]
 });
+export const storeIcon = new L.Icon({
+  iconUrl: require("../assets/store.png"),
+  iconRetinaUrl: require("../assets/store.png"),
+  iconAnchor: [5, 55],
+  popupAnchor: [10, -44],
+  iconSize: [25, 30],
+  shadowSize: [68, 95],
+  shadowAnchor: [20, 92]
+});
 
 class DriverMap extends React.Component {
   render() {
@@ -51,6 +60,29 @@ class DriverMap extends React.Component {
             Store Hours:
             <br />
             Mon-Sat: 10AM-9PM & Sun 11AM-8P
+          </Popup>
+        </Marker>
+        <Marker position={[29.743536, -95.381684]} icon={storeIcon} onClick= {() => {this.maxZoom=1}}>
+          <Popup>
+            Pick Up: <br />
+            DigitalCrafts <br />
+            3302 Canal St
+            <br />
+            Houston, TX 77003
+            <br />
+            Item(s):
+            <br />
+            Dell 15.6" Touchscreen
+            <br />
+            Return: <br />
+            Fry's Electronics <br />
+            11565 US-5,
+            <br />
+            Houston, TX 77031
+            <br />
+            Store Hours:
+            <br />
+            Sun-Fri: 10AM-9PM & Sat 9AM-9PM
           </Popup>
         </Marker>
       </LeafletMap>
