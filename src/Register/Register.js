@@ -23,7 +23,18 @@ class Register extends Component {
       open: false,
       isLoggedin: false
     };
+    this.routeChange = this.routeChange.bind(this)
   }
+
+  routeChange(){
+    if(!this.state.open){
+      this.props.history.push('/Dashboard')
+    }
+    else if(this.state.open){
+      this.props.history.push('/userdashboard')
+    }
+  }
+  
   render() {
 
     const { open } = this.state;
@@ -53,7 +64,7 @@ class Register extends Component {
             alert("Password does not match")
           }
           axios.post('/signup', values)
-          this.props.history.push('/userdashboard')
+          
           }}
         >
         {({
@@ -181,7 +192,7 @@ class Register extends Component {
                         </InputGroup>
                       </div>
                     </Collapse>
-                    <Button color="success" block>Create Account</Button>
+                    <Button color="success" onClick={this.routeChange} block>Create Account</Button>
                   </Form>
                 </CardBody>
               </Card>

@@ -30,7 +30,7 @@ class OrderForm extends React.Component {
     }
 
     handleInputText(e){
-        console.log(e.target.name)
+        // console.log(e.target.name)
         this.setState({
             [e.target.name]: e.target.value
         })
@@ -49,7 +49,7 @@ class OrderForm extends React.Component {
     }
 
     handleItemFile(e) {
-        console.log(e.target.files)
+        // console.log(e.target.files)
         if(!e.target.files[0]){
             this.setState({
                 imageItem: ''
