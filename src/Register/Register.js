@@ -53,7 +53,12 @@ class Register extends Component {
             alert("Password does not match")
           }
           axios.post('/signup', values)
-          this.props.history.push('/userdashboard')
+          if(this.state.open === true){
+            this.props.history.push('/Dashboard')
+          }
+          else if(this.state.open === false){
+            this.props.history.push('/userdashboard')
+          }
           }}
         >
         {({

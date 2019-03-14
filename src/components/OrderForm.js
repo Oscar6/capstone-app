@@ -67,6 +67,10 @@ class OrderForm extends React.Component {
         if (this.uploadReceiptInput.files[0] === undefined) {
             alert("No file was uploaded")
         }
+        else {
+            alert('Order has been placed!')
+        }
+
 
         var formData = new FormData();
         formData.append('itemName', this.state.itemName)
@@ -101,7 +105,7 @@ class OrderForm extends React.Component {
                     <Form.Group className="formGridStore">
                         <Form.Label>Item</Form.Label>
                         <Form.Control name="itemName" placeholder="Microwave..." onChange={this.handleInputText} />
-                        {this.state.itemName}
+                        
                     </Form.Group>
  
                     <Form.Group className="formGridStore">
@@ -134,7 +138,7 @@ class OrderForm extends React.Component {
                         </Form.Group>
                     </Form.Row>  */}
 
-                    <Button variant="primary" type="submit" value="Submit" className="orderButton">
+                    <Button variant="primary" type="submit" value="Submit" className="orderButton" onSubmit={this.handleSubmit}>
                         Submit Order
                     </Button>
 
