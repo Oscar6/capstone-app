@@ -26,6 +26,9 @@ import {
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle } from '@coreui/coreui/dist/js/coreui-utilities'
 import DriverMap from '../components/DriverMap'
+import axios from 'axios';
+
+
 
 
 const brandPrimary = getStyle('--primary')
@@ -225,6 +228,8 @@ const cardChartOpts4 = {
   },
 };
 
+
+
 // Main Chart
 
 
@@ -242,6 +247,13 @@ class Dashboard extends Component {
       modal: false
     };
     this.toggle = this.toggle.bind(this);
+  }
+
+  componentDidMount(){
+    axios.get('/driver-data')
+      .then((result)=>{
+        console.log(result)
+      })
   }
 
   toggle() {
