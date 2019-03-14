@@ -1,6 +1,8 @@
 import React from "react";
 import { Map as LeafletMap, TileLayer, Marker, Popup } from "react-leaflet";
+import { Card, CardBody } from 'reactstrap';
 import L from "leaflet";
+import OrderForm from "./OrderForm";
 import "../Styles/App.css";
 
 export const storeIcon = new L.Icon({
@@ -16,6 +18,9 @@ export const storeIcon = new L.Icon({
 class Map extends React.Component {
   render() {
     return (
+      <Card className="widthOfCard">
+        <CardBody>
+          <p className="orderHeader">Place your return order below</p>
       <LeafletMap
         center={[29.7604, -95.3698]}
         zoom={11}
@@ -150,6 +155,9 @@ class Map extends React.Component {
           </Popup>
         </Marker>
       </LeafletMap>
+      <OrderForm />
+      </CardBody>
+      </Card>
     );
   }
 }

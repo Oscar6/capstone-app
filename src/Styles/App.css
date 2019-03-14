@@ -6,11 +6,42 @@
     height: 100%;
 } */
 
+.widthOfCard {
+    margin-left: 10%;
+    width: 80%;
+}
+
+.orderHeader {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 30px;
+}
+
 .orderForm {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.orderForm.card {
     padding-right: 15px;
     padding-left: 15px;
     background-color: rgb(255, 255, 255);
     margin-left: 3%;
+    margin-right: 5%;
+    margin-top: 5%;
+    max-width: 85%;
+    max-height: 300px;
+    /* font-family: 'Quicksand', sans-serif; */
+    /* border-radius: 20px; */
+    padding: 30px;
+    /* border-style: solid;
+    border-width: 2px; */
+}
+
+/* .reviewForm {
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 90%;
     margin-right: 5%;
     margin-top: 5%;
     max-width: 100%;
@@ -19,22 +50,7 @@
     padding: 30px;
     border-style: solid;
     border-width: 2px;
-}
-
-.reviewForm {
-    padding-right: 15px;
-    padding-left: 15px;
-    background-color: rgb(255, 255, 255);
-    /* margin-left: 90%; */
-    /* margin-right: 5%; */
-    margin-top: 5%;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 20px;
-    padding: 30px;
-    border-style: solid;
-    border-width: 2px;
-}
+} */
 
 .formGridStore {
     margin-bottom: 30px;
@@ -49,7 +65,7 @@ label.form-label {
 }
 
 .orderButton.btn.btn-primary {
-    margin-left: 20%;
+    margin-left: 45%;
 }
 .reviewButton.btn.btn-primary {
     margin-left: 30%;
@@ -61,6 +77,7 @@ label.form-label {
     border-width: 2px; 
     border-style: solid;
     border-radius: 20px; 
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
     display: flex;
 }
