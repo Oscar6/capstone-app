@@ -244,11 +244,11 @@ class Dashboard extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen,
-    });
-  }
+  // toggle() {
+  //   this.setState({
+  //     dropdownOpen: !this.state.dropdownOpen,
+  //   });
+  // }
 
   toggle() {
     this.setState(prevState => ({
