@@ -10,7 +10,8 @@ const SignupSchema = Yup.object().shape({
   lname: Yup.string().required('Last name is required'),
   email: Yup.string().email("Email not valid").required('Email is required'),
   password: Yup.string().min(6, 'Password must be 6 character or longer').required('Password is required'),
-  carYear: Yup.number()
+  carYear: Yup.number(),
+  address: Yup.string().required("Address is required")
   
 })
 
@@ -20,7 +21,7 @@ class Register extends Component {
 
     this.state = {
       open: false,
-      isLoggedin:false
+      isLoggedin: false
     };
   }
   render() {
@@ -34,6 +35,7 @@ class Register extends Component {
             fname: '',
             lname: '',
             email: '',
+            address: '',
             password: '',
             confirm: '',
             driversLicenseNumber: '',
@@ -97,6 +99,13 @@ class Register extends Component {
                     {touched.email && errors.email && <p>{errors.email}</p>}
                     <InputGroup className="mb-3">
                       <InputGroupAddon addonType="prepend">
+                        <InputGroupText><i className="icon-user"></i></InputGroupText>
+                      </InputGroupAddon>
+                      <Input name="address" type="text" onChange={handleChange} value={values.address} placeholder="Street address" autoComplete="address" />
+                    </InputGroup>                    
+                    {touched.address && errors.address && <p>{errors.address}</p>}
+                    <InputGroup className="mb-3">
+                      <InputGroupAddon addonType="prepend">
                         <InputGroupText>
                           <i className="icon-lock"></i>
                         </InputGroupText>
@@ -118,13 +127,12 @@ class Register extends Component {
                       aria-controls="example-collapse-text"
                       aria-expanded={open}
                       size="lg"
-                      color= "primary"
+                      color="primary"
                       style={{ marginBottom: '1rem' }}
                       block
                     >
                       Register as a driver
-        </Button>
-                    
+                    </Button>
                     <Collapse in={this.state.open}>
                       <div>
                         <InputGroup className="mb-4">
@@ -145,19 +153,29 @@ class Register extends Component {
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
+                            </span></InputGroupText>
                           </InputGroupAddon>
                           <Input name="carBrand" type="text" onChange={handleChange} value={values.carBrand} placeholder="Car Make" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
+                            </span></InputGroupText>
                           </InputGroupAddon>
                           <Input name="carModel" type="text" onChange={handleChange} value={values.carModel} placeholder="Car Model" autoComplete="" />
                         </InputGroup>
                         <InputGroup className="mb-4">
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>🚗</InputGroupText>
+                            <InputGroupText>
+                              <span role="img" aria-label="car emoji">
+                                🚗
+                            </span>
+                            </InputGroupText>
                           </InputGroupAddon>
                           <Input name="carYear" type='number' onChange={handleChange} value={values.carYear} placeholder="Vehicle Year" autoComplete="" />
                         </InputGroup>

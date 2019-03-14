@@ -10,13 +10,15 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 router.post('/return-data', (req,res)=>{
-    console.log(req.body)
-    console.log(req.files.imageItem)
-
+    console.log(req)
+    console.log(req.files)
+    
     let imageFileReceipt = req.files.imageReceipt
-    imageFileReceipt.mv(`${__dirname}/uploads/image_receipt.jpg`)
     let imageFileItem = req.files.imageItem
-    imageFileItem.mv(`${__dirname}/uploads/image_item.jpg`)
+
+    imageFileReceipt.mv(`${__dirname}/uploads/${imageFileReceipt.name}.jpg`)
+    imageFileItem.mv(`${__dirname}/uploads/${imageFileItem.name}.jpg`)
+    
 })
 
 

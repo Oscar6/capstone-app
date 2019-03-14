@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Container , Row , Image , Col, Form } from 'react-bootstrap';
-import { Button } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap';
+
 import '../Styles/styles.css';
 import Map from '../components/Map';
 import OrderForm from '../components/OrderForm';
@@ -17,15 +17,15 @@ class UserDashboard extends Component {
   }
   render() {
     return (
-        <Container className="dashboardContainer">
+      <Container className="dashboardContainer">
         <Row className="rowContainer">
-         <Col><OrderForm  /></Col>
-         <Col><Map  /></Col>
-         <Col><ReviewForm  /></Col>
+          <Col><OrderForm /></Col>
+          <Col><Map /></Col>
+          <Col><ReviewForm /></Col>
         </Row>
-        </Container>
+      </Container>
     );
   }
 }
 
-  export default UserDashboard;
+export default UserDashboard;
