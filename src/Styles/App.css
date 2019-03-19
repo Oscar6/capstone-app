@@ -1,23 +1,28 @@
-.mapboxgl-canvas {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+.widthOfCard {
+    margin-left: 10%;
+    width: 80%;
+}
+
+.orderHeader {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 30px;
 }
 
 .orderForm {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.orderForm.card {
     padding-right: 15px;
     padding-left: 15px;
     background-color: rgb(255, 255, 255);
-    margin-left: 5%;
+    margin-left: 3%;
     margin-right: 5%;
-    width: 20%;
-    height: 50%;
-    border-radius: 20px;
+    margin-top: 5%;
+    max-width: 85%;
+    max-height: 300px;
     padding: 30px;
-    border-style: solid;
-    border-width: 2px;
 }
 
 .formGridStore {
@@ -30,4 +35,22 @@
 label.form-label {
     display: inline-block;
     margin-bottom: .0rem;
+}
+
+.orderButton.btn.btn-primary {
+    margin-left: 45%;
+}
+.reviewButton.btn.btn-primary {
+    margin-left: 30%;
+}
+
+.leaflet-container {
+    height: 25rem;
+    width: 100%;
+    border-width: 2px; 
+    border-style: solid;
+    border-radius: 20px; 
+    margin-top: 2%;
+    margin-bottom: 1%;
+    display: flex;
 }

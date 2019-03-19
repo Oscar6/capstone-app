@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Mule 
 
-In the project directory, you can run:
+One Paragraph of project description goes here
 
 ### `npm start`
 
@@ -11,6 +11,45 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+Give examples
+```
+
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [React](https://reactjs.org/) - The web framework used
+* [Node](https://nodejs.org/en/) - Back-end
+* [PostgreSQL](https://www.postgresql.org/) - Back-end Database
+* [Sequelize](http://docs.sequelizejs.com/) - Back-end Database
+* [Express](https://expressjs.com/) - Back-end 
+* [Axios](https://github.com/axios/axios) - Back-end
+* [Leaflet](https://leafletjs.com/) - Map Framework
+* [ReactBootstrap](https://react-bootstrap.github.io/) - Front-end
+* [Reacstrap](https://reactstrap.github.io/) - Front-end
+
+
+## Authors
+
+* **Oscar Miranda - Cabrera** - *Initial work* - [Mule](https://github.com/Oscar6)
+* **John Argote** - *Initial work* - [Mule](https://github.com/j-argote)
+* **Rigo Hernandez** - *Initial work* - [Mule](https://github.com/Rigo-Hernandez)
+
+
+## Available Scripts
+
+In the project directory, you can run:
+
+
 
 ### `npm test`
 

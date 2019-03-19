@@ -1,19 +1,35 @@
 import React, { Component } from 'react'
-import { Navbar, Form, Button, Nav } from 'react-bootstrap'
+import { Navbar, Nav, Form } from 'react-bootstrap'
+import { Button } from 'reactstrap'
+import Img from '../assets/mule2.png'
+import {Link} from 'react-router-dom'
+
+
 export default class NavBar extends Component {
     render() {
         return (
-            <Navbar bg="dark" variant="dark" fixed="top" >
-                <Navbar.Brand href="/">Navbar</Navbar.Brand>
+            <Navbar bg="dark" variant="dark" fixed="top">
+                <Navbar.Brand><Link to="/" >
+                    <img
+                        src={Img}
+                        width="70vh"
+                        height="70vh"
+                        padding='0%'
+                        max-width='100%'
+                        className="img-responsive d-inline-block align-top"
+                        alt="Mule"
+                        overflow='hidden'
+                    /></Link>
+                </Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="/dashboard">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <Nav.Link><Link to="/dashboard">Home</Link></Nav.Link>
+                    <Nav.Link><Link to="/about">About Us</Link></Nav.Link>
+                    <Nav.Link><Link to="/faq">FAQ</Link></Nav.Link>
                 </Nav>
-                {/* <Form inline>
-                    <Button className="login" href="/login"  variant="outline-info"> Login </Button>
-                    <Button variant="outline-info" href="/register" >Register</Button>
-                </Form> */}
+                <Form inline>
+                    <Button href="https://www.facebook.com/mule.app.96" className="btn-facebook btn-brand icon"><i className="fa fa-facebook" target="blank" ></i></Button>
+                    <Button href="https://twitter.com/mule_app" className="btn-twitter btn-brand icon"><i className="fa fa-twitter" target="blank"></i></Button>
+                </Form>
             </Navbar>
         )
     }
