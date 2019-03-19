@@ -28,10 +28,10 @@ class Register extends Component {
 
   routeChange(){
     if(!this.state.open){
-      this.props.history.push('/Dashboard')
+      this.props.history.push('/userDashboard')
     }
     else if(this.state.open){
-      this.props.history.push('/userdashboard')
+      this.props.history.push('/Dashboard')
     }
   }
   
