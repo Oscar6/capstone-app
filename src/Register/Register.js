@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, CardBody, CardFooter, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import { Button, Card, CardBody, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import Collapse from 'react-bootstrap/Collapse'
 import {Formik} from 'formik';
 import axios from 'axios';
@@ -28,10 +28,10 @@ class Register extends Component {
 
   routeChange(){
     if(!this.state.open){
-      this.props.history.push('/Dashboard')
+      this.props.history.push('/userDashboard')
     }
     else if(this.state.open){
-      this.props.history.push('/userdashboard')
+      this.props.history.push('/Dashboard')
     }
   }
   

@@ -1,11 +1,10 @@
 import React from "react";
 import { Container } from "reactstrap";
-import Img from "../assets/mule2.png";
 
 class About extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (

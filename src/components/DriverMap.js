@@ -26,7 +26,6 @@ class DriverMap extends React.Component {
   render() {
     return (
       <LeafletMap className="leaflet-container"
-      //  style={{ height: 25 + 'rem', width: 1068 + 'px', marginTop: 20 + 'px' }}
         center={[29.7604, -95.3698]}
         zoom={11}
         maxZoom={18}
