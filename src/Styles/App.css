@@ -1,11 +1,3 @@
-/* .mapboxgl-canvas {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-} */
-
 .widthOfCard {
     margin-left: 10%;
     width: 80%;
@@ -30,27 +22,8 @@
     margin-top: 5%;
     max-width: 85%;
     max-height: 300px;
-    /* font-family: 'Quicksand', sans-serif; */
-    /* border-radius: 20px; */
     padding: 30px;
-    /* border-style: solid;
-    border-width: 2px; */
 }
-
-/* .reviewForm {
-    padding-right: 15px;
-    padding-left: 15px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 90%;
-    margin-right: 5%;
-    margin-top: 5%;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 20px;
-    padding: 30px;
-    border-style: solid;
-    border-width: 2px;
-} */
 
 .formGridStore {
     margin-bottom: 30px;
