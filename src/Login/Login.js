@@ -18,7 +18,6 @@ import GoogleLogin from "react-google-login";
 import Facebook from '../components/Facebook'
 import { Formik } from "formik";
 import axios from "axios";
-// import {AuthConsumer} from '../auth/AuthContext';
 
 class Login extends Component {
   constructor(props) {
