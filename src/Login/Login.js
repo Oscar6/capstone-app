@@ -41,7 +41,7 @@ class Login extends Component {
           password: ''
         }}
         onSubmit={(values)=>{
-          // console.log(values)
+          console.log(values)
           axios.post('/signin', values)
           .then(res=>{
               if(res.data.token){

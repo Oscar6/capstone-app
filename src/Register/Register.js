@@ -23,16 +23,6 @@ class Register extends Component {
       open: false,
       isLoggedin: false
     };
-    this.routeChange = this.routeChange.bind(this)
-  }
-
-  routeChange(){
-    if(!this.state.open){
-      this.props.history.push('/userDashboard')
-    }
-    else if(this.state.open){
-      this.props.history.push('/Dashboard')
-    }
   }
   
   render() {
@@ -63,7 +53,18 @@ class Register extends Component {
           if(values.password === !values.confirm){
             alert("Password does not match")
           }
+          
+          //sends data to server
           axios.post('/signup', values)
+
+          //redirects you to driver dashboard or client dashboard based on register
+          if(!this.state.open){
+            this.props.history.push('/userDashboard')
+          }
+          else if(this.state.open){
+            this.props.history.push('/Dashboard')
+          }
+
           
           }}
         >
@@ -192,7 +193,7 @@ class Register extends Component {
                         </InputGroup>
                       </div>
                     </Collapse>
-                    <Button color="success" onClick={this.routeChange} block>Create Account</Button>
+                    <Button color="success" block>Create Account</Button>
                   </Form>
                 </CardBody>
               </Card>
