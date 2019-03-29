@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {NavLink} from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import "./Styles/styles.css";
 import Img from "./assets/mule-logo.png";
@@ -34,12 +35,17 @@ class App extends Component {
         </div>
         <br />
         <h5 className="loginRegister">Login or Register to submit a request</h5>
-        <Button variant="primary" size="lg" href="/login" block>
-          Login
-        </Button>
-        <Button variant="info" size="lg" href="/register" block>
-          Register
-        </Button>
+        <NavLink to='/login'>
+          <Button variant="primary" size="lg" block>
+            Login
+          </Button>
+        </NavLink>
+        {/* <br/> */}
+        <NavLink to='/register'>
+          <Button variant="info" size="lg" block>
+            Register
+          </Button>
+        </NavLink>
       </div>
     );
   }

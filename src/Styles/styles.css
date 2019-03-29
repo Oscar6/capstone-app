@@ -110,3 +110,7 @@ body{
     width: 25rem;
     height: 30rem;
 }
+
+Button{
+    margin-bottom: 5px;
+}

@@ -1,5 +1,8 @@
 import React from "react";
-import { Container } from "reactstrap";
+import { Container, Card } from "reactstrap";
+import {Link} from 'react-router-dom';
+
+import '../Styles/opacity.css';
 
 class About extends React.Component {
   // constructor(props) {
@@ -10,6 +13,7 @@ class About extends React.Component {
     return (
       <Container className="aboutPage">
         <div>
+          <Card className="opacity">
           <div className="bottomBorder">
             <h1>About Mule</h1>
             <p className="aboutInfo">
@@ -32,8 +36,9 @@ class About extends React.Component {
             </p>
           </div>
           <p className="aboutInfo">
-            Check out our <a href="/faq">FAQ</a> page for more info.
+            Check out our <Link to="/faq">FAQ</Link> page for more info.
           </p>
+          </Card>
         </div>
       </Container>
     );
