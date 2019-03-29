@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, Form } from 'react-bootstrap'
 import { Button } from 'reactstrap'
-import Img from '../assets/mule2.png'
+// import Img from '../assets/mule-logo.png'
 import {Link} from 'react-router-dom'
 
 
@@ -9,18 +9,18 @@ export default class NavBar extends Component {
     render() {
         return (
             <Navbar bg="dark" variant="dark" fixed="top">
-                <Navbar.Brand><Link to="/" >
+                {/* <Navbar.Brand><Link to="/" >
                     <img
                         src={Img}
                         width="70vh"
-                        height="70vh"
+                        height="50vh"
                         padding='0%'
                         max-width='100%'
                         className="img-responsive d-inline-block align-top"
                         alt="Mule"
                         overflow='hidden'
                     /></Link>
-                </Navbar.Brand>
+                </Navbar.Brand> */}
                 <Nav className="mr-auto">
                     <Nav.Link><Link to="/dashboard">Home</Link></Nav.Link>
                     <Nav.Link><Link to="/about">About Us</Link></Nav.Link>

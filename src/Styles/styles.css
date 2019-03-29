@@ -1,11 +1,13 @@
 body{
-    background-image: url(./images/RocketWallpaper.png) ;
+    background-image: url(./images/RocketWallpaper.png);
     background-repeat: no-repeat;
-    background-position: 150% -5%;
+    background-position: 100%;
+    background-size: 800px 700px;
+    /* width: 90%; */
     background-attachment: fixed;
     padding-top: 70px;
     background: cover;
-    background-color: rgb(190, 190, 190);
+    background-color: rgb(66, 66, 66);
 }
 
 .login{
@@ -52,6 +54,7 @@ body{
 
 .descriptionHome {
     font-size: 27px;
+    color: white;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -59,6 +62,7 @@ body{
     text-align: center;
     margin-bottom: 20px;
     font-size: 18px;
+    color: white;
     font-family: 'Quicksand', sans-serif;
 }
 
