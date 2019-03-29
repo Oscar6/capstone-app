@@ -96,7 +96,7 @@ const cardChartData2 = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'My Fist Dataset',
       backgroundColor: brandInfo,
       borderColor: 'rgba(255,255,255,.55)',
       data: [1, 18, 9, 17, 34, 22, 11],
@@ -472,7 +472,6 @@ class Dashboard extends Component {
 
             </Suspense>
           </Col>
-
           <Col xs="6" sm="6" lg="3">
             <Suspense fallback={this.loading()}>
               <div className="chart-wrapper">
@@ -490,7 +489,6 @@ class Dashboard extends Component {
               <CardBody>
                 <Row>
                   <Col xs="12" md="12" xl="12">
-
                     <br />
                     <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
                       <thead className="thead-light">

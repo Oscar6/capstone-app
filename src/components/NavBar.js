@@ -22,7 +22,7 @@ export default class NavBar extends Component {
                     /></Link>
                 </Navbar.Brand> */}
                 <Nav className="mr-auto">
-                    <Nav.Link><Link to="/dashboard">Home</Link></Nav.Link>
+                    <Nav.Link><Link to="/">Home</Link></Nav.Link>
                     <Nav.Link><Link to="/about">About Us</Link></Nav.Link>
                     <Nav.Link><Link to="/faq">FAQ</Link></Nav.Link>
                 </Nav>
