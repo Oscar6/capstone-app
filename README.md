@@ -1,8 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Mule 
-
-One Paragraph of project description goes here
+# Mule
 
 ### `npm start`
 
@@ -11,19 +9,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -48,8 +33,6 @@ Add additional notes about how to deploy this on a live system
 ## Available Scripts
 
 In the project directory, you can run:
-
-
 
 ### `npm test`
 
