@@ -1,14 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Mule
+Cap-stone project in which we decided to tackle the on-demand service industry. 
+Mule serves as an on-demand service for users needing items returned to a retail store. 
+Currently, the UI has been designed as well as the Login/Registration which is saved to the database on the backend.
 
 ### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
 ## Built With
 
@@ -25,7 +25,7 @@ You will also see any lint errors in the console.
 
 ## Authors
 
-* **Oscar Miranda - Cabrera** - *Initial work* - [Mule](https://github.com/Oscar6)
+* **Oscar Miranda-Cabrera** - *Initial work* - [Mule](https://github.com/Oscar6)
 * **John Argote** - *Initial work* - [Mule](https://github.com/j-argote)
 * **Rigo Hernandez** - *Initial work* - [Mule](https://github.com/Rigo-Hernandez)
 
