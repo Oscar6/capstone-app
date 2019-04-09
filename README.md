@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Mule
+![](../master/src/assets/mule-logo.png)
 Cap-stone project in which we decided to tackle the on-demand service industry. 
 Mule serves as an on-demand service for users needing items returned to a retail store. 
 Currently, the UI has been designed as well as the Login/Registration which is saved to the database on the backend.
