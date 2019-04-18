@@ -1,9 +1,33 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![](../master/src/assets/mule-logo.png)
+<p align="center">
+  <img src="https://github.com/Oscar6/capstone-app/blob/master/src/assets/mule-logo.png" width="50%" height="50%" title="Home"> 
+</p>
+
 Cap-stone project in which we decided to tackle the on-demand service industry. 
 Mule serves as an on-demand service for users needing items returned to a retail store. 
 Currently, the UI has been designed as well as the Login/Registration which is saved to the database on the backend.
+
+## Home & Login/Register pages
+<p>
+  <img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/home.png" width="25%" height="25% title="Home">
+  <img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/login:register.png" width="25%" height="25% title="Login/Register">
+  <img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/register.png" width="25%" height="25% title="Register">
+</p>
+
+## User Dashboard
+<p>
+<img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/userdashboard.png" width="25%" height="25% title="User Dashboard">
+<img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/userdashboard2.png" width="25%" height="25% title="User Dashboard">
+</p>
+
+## Main/Driver Dashboard
+<p>
+<img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/dashboard.png" width="25%" height="25% title="Dashboard">
+<img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/dashboard2.png" width="25%" height="25% title="Dashboard">
+<img src="https://github.com/Oscar6/capstone-app/blob/master/src/Styles/images/dashboard3.png" width="25%" height="25% title="Dashboard">
+</p>
+
 
 ### `npm start`
 
