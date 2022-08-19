@@ -49,9 +49,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Authors
 
-* **Oscar Miranda-Cabrera** - *Initial work* - [Mule](https://github.com/Oscar6)
 * **John Argote** - *Initial work* - [Mule](https://github.com/j-argote)
 * **Rigo Hernandez** - *Initial work* - [Mule](https://github.com/Rigo-Hernandez)
+* **Oscar Miranda-Cabrera** - *Initial work* - [Mule](https://github.com/Oscar6)
 
 
 ## Available Scripts
